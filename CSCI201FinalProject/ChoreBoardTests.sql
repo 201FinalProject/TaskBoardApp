@@ -57,6 +57,14 @@ INSERT INTO History (taskName, completedBy, difficulty, completionDate, sixdigit
 VALUES('laundry', 'mattq', '4', '1/7/2022', 'AAAAAA'), ('dishes', 'mattq2', '3', '4/4/2020', 'AAAAAA'),
 ('clean', 'aadeshb', '5', '3/2/2019', 'CCCCCC');
 
+DROP PROCEDURE IF EXISTS getHistory;
+DELIMITER $$
+CREATE PROCEDURE getHistory()
+
+BEGIN
+SELECT taskName, completedby, difficulty, completionDate FROM History;
+END $$
+DELIMITER ;
 
 SELECT * FROM Users;
 SELECT * FROM Projects;

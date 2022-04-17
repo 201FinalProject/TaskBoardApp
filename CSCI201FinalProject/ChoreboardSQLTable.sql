@@ -37,6 +37,15 @@ CREATE TABLE History (
 	FOREIGN KEY (sixdigitCode) REFERENCES Projects(sixdigitCode)
 );
 
+DROP PROCEDURE IF EXISTS getHistory;
+DELIMITER $$
+CREATE PROCEDURE getHistory()
+
+BEGIN
+SELECT taskName, completedby, difficulty, completionDate FROM History;
+END $$
+DELIMITER ;
+
 
 SELECT * FROM Users;
 SELECT * FROM Projects;
