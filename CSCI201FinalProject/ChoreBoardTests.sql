@@ -38,6 +38,26 @@ CREATE TABLE History (
 );
 
 
+    
+INSERT INTO Projects (assignment, description, sixdigitCode)
+VALUES('Project 1', '1', 'AAAAAA'), ('Project 2', '2', 'BBBBBB'), ('Project 3', '3', 'CCCCCC'), 
+('Project 4', '4', 'DDDDDD'), ('Project 5', '5', 'EEEEEE'), ('Project 6', '6', 'FFFFFF');
+
+INSERT INTO Users (username, email, pw, sixdigitCode)
+VALUES('mattq', 'matt@usc.edu', 'asdf', 'AAAAAA'),
+	('nickc', 'nick@usc.edu', 'efgh', 'BBBBBB'),
+    ('aadeshb', 'aadesh@usc.edu', 'ijkl', 'CCCCCC'),
+    ('slaterg', 'slater@usc.edu', 'mnop', 'DDDDDD'),
+    ('paulk', 'paul@usc.edu', 'qrst', 'EEEEEE'),
+    ('adityah', 'aditya@usc.edu', 'uvwx', 'FFFFFF'),
+    ('mattq2', 'matt2@usc.edu', 'asdf2', 'AAAAAA'),
+    ('nickc2', 'nick2@usc.edu', 'efgh2', 'BBBBBB');
+    
+INSERT INTO History (taskName, completedBy, difficulty, completionDate, sixdigitCode)
+VALUES('laundry', 'mattq', '4', '1/7/2022', 'AAAAAA'), ('dishes', 'mattq2', '3', '4/4/2020', 'AAAAAA'),
+('clean', 'aadeshb', '5', '3/2/2019', 'CCCCCC');
+
+
 SELECT * FROM Users;
 SELECT * FROM Projects;
 SELECT * FROM Leaderboard;
