@@ -115,17 +115,16 @@ public class SQLHelper {
         //weird time zone thing "jdbc:mysql://localhost/restaurantdata?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ChoreboardDatabase?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
         
-        CallableStatement callst;
-        callst = con.prepareCall("{CALL addTask(?, ?, ?, ?, ? )}");
+        PreparedStatement prepst = con.prepareStatement("INSERT INTO Tasks values (?, ?, ?, ?, ? )");
         
-        callst.setString(1, taskName);
-        callst.setString(2, person);
-        callst.setDouble(3, diff);
-        callst.setString(4, completionDate);
-        callst.setString(5, sixdigitCode);
+        prepst.setString(1, taskName);
+        prepst.setString(2, person);
+        prepst.setDouble(3, diff);
+        prepst.setString(4, completionDate);
+        prepst.setString(5, sixdigitCode);
         
-        callst.executeQuery();
- 
+        prepst.executeUpdate();
+        
         }
         catch (SQLException e) {
         	e.printStackTrace();
@@ -154,6 +153,33 @@ public class SQLHelper {
         
         callst.executeQuery();
  
+        }
+        catch (SQLException e) {
+        	e.printStackTrace();
+        }
+	}
+	
+	public void addUser(String username, String email, String pw, String sixdigitCode) {
+		try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+        try {
+        	//"jdbc:mysql://localhost:3306/restaurantData"
+        //weird time zone thing "jdbc:mysql://localhost/restaurantdata?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ChoreboardDatabase?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
+        
+        PreparedStatement prepst = con.prepareStatement("INSERT INTO Users values (?, ?, ?, ? )");
+        
+        prepst.setString(1, username);
+        prepst.setString(2, email);
+        prepst.setString(3, pw);
+        prepst.setString(4, sixdigitCode);
+        
+        prepst.executeUpdate();
+        
         }
         catch (SQLException e) {
         	e.printStackTrace();
