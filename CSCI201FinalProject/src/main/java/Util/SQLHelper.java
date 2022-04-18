@@ -102,4 +102,62 @@ public class SQLHelper {
         
         return tasks;
 	}
+	
+	public void addTask(String taskName, String person, double diff, String completionDate, String sixdigitCode) {
+		try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+        try {
+        	//"jdbc:mysql://localhost:3306/restaurantData"
+        //weird time zone thing "jdbc:mysql://localhost/restaurantdata?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ChoreboardDatabase?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
+        
+        CallableStatement callst;
+        callst = con.prepareCall("{CALL addTask(?, ?, ?, ?, ? )}");
+        
+        callst.setString(1, taskName);
+        callst.setString(2, person);
+        callst.setDouble(3, diff);
+        callst.setString(4, completionDate);
+        callst.setString(5, sixdigitCode);
+        
+        callst.executeQuery();
+ 
+        }
+        catch (SQLException e) {
+        	e.printStackTrace();
+        }
+	}
+	
+	public void deleteTask(String taskName, String person, String completionDate, String sixdigitCode) {
+		try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        
+        try {
+        	//"jdbc:mysql://localhost:3306/restaurantData"
+        //weird time zone thing "jdbc:mysql://localhost/restaurantdata?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost/ChoreboardDatabase?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "root");
+        
+        CallableStatement callst;
+        callst = con.prepareCall("{CALL deleteTask(?, ?, ?, ? )}");
+        
+        callst.setString(1, taskName);
+        callst.setString(2, person);
+        callst.setString(3, completionDate);
+        callst.setString(4, sixdigitCode);
+        
+        callst.executeQuery();
+ 
+        }
+        catch (SQLException e) {
+        	e.printStackTrace();
+        }
+	}
+	
 }

@@ -66,6 +66,29 @@ SELECT taskName, person, difficulty, completionDate FROM Tasks WHERE Tasks.sixdi
 END $$
 DELIMITER ;
 
+DROP PROCEDURE IF EXISTS addTask;
+DELIMITER $$
+CREATE PROCEDURE addTask(IN taskName_ VARCHAR(255), IN person_ VARCHAR(255), IN difficulty_ VARCHAR(255), 
+IN completionDate_ VARCHAR(255), IN sixdigitCode_ VARCHAR(6))
+
+BEGIN
+INSERT INTO Tasks(taskName, person, difficulty, completionDate, sixdigitCode)
+VALUES (taskName_, person_, difficulty_, completionDate_, sixdigitCode_);
+END $$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS deleteTask;
+DELIMITER $$
+CREATE PROCEDURE deleteTask(IN taskName_ VARCHAR(255), IN person_ VARCHAR(255),
+IN completionDate_ VARCHAR(255), IN sixdigitCode_ VARCHAR(6))
+
+BEGIN
+DELETE FROM Tasks WHERE Tasks.taskName = taskName_
+AND Tasks.person = person_
+AND Tasks.completionDate = completionDate_
+AND Tasks.sixdigitCode = sixdigitCode_;
+END $$
+DELIMITER ;
 
 SELECT * FROM Users;
 SELECT * FROM Projects;
