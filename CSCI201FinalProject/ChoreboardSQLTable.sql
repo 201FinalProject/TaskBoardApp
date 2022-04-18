@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS Tasks;
 DROP TABLE IF EXISTS Users;
 DROP TABLE IF EXISTS Leaderboard;
 DROP TABLE IF EXISTS History;
@@ -37,12 +38,31 @@ CREATE TABLE History (
 	FOREIGN KEY (sixdigitCode) REFERENCES Projects(sixdigitCode)
 );
 
+CREATE TABLE Tasks (
+	taskId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	taskName VARCHAR(255),
+    person VARCHAR(255),
+    difficulty VARCHAR(255),
+    completionDate VARCHAR(255),
+    sixdigitCode VARCHAR(6) NOT NULL,
+    FOREIGN KEY (sixdigitCode) REFERENCES Projects(sixdigitCode)
+);
+
 DROP PROCEDURE IF EXISTS getHistory;
 DELIMITER $$
 CREATE PROCEDURE getHistory()
 
 BEGIN
 SELECT taskName, completedby, difficulty, completionDate FROM History;
+END $$
+DELIMITER ;
+
+DROP PROCEDURE IF EXISTS getTasksByGroup;
+DELIMITER $$
+CREATE PROCEDURE getTasksByGroup(IN id VARCHAR(255))
+
+BEGIN
+SELECT taskName, person, difficulty, completionDate FROM Tasks WHERE Tasks.sixdigitCode = id;
 END $$
 DELIMITER ;
 
