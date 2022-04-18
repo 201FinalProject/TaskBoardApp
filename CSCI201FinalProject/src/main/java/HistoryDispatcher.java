@@ -1,5 +1,5 @@
 
-
+import java.util.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -28,6 +28,8 @@ public class HistoryDispatcher extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		Util.SQLHelper helper = new Util.SQLHelper();
+		ArrayList<Util.Task> history = helper.getHistory();
 	}
 
 	/**

@@ -1,5 +1,5 @@
 
-
+import java.util.*;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,6 +27,9 @@ public class TaskDispatcher extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		Util.SQLHelper helper = new Util.SQLHelper();
+		//placeholder string for group ID
+		ArrayList<Util.Task> tasks = helper.getTasksByGroup("placeholder");
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
