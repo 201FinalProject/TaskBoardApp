@@ -2,8 +2,8 @@ import React from "react";
 
 function Login(){
     return(
-        <div>
-
+        <div style={{textAlign: "center"}}>
+            Hi there!!
         </div>
     )
 }
