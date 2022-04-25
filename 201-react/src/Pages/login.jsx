@@ -19,7 +19,7 @@ const useStyles = {
         textAlign: "center", 
         marginTop: "100px",
         marginBottom: "-5px",
-        marginRight: "300px",
+        marginRight: "320px",
         fontFamily: "DM Sans",
         fontSize: "28px",
         fontWeight: "700",
@@ -37,7 +37,7 @@ const useStyles = {
         display: "block",
         background: "rgba(255, 207, 164, 0.01)",
         boxShadow: "inset 0px -1px 0px #000000, inset 1px 0px 0px #000000, inset -1px 0px 0px #000000, inset 0px 1px 0px #000000",
-        marginLeft: "242px",
+        margin: "auto",
         fontFamily: "DM Sans",
         background: "#FFCFA403"
     }
@@ -51,9 +51,9 @@ function Login(){
             <div>
                 <h3 style={useStyles.InnerLogin}>Login</h3>
                 <input style={useStyles.Boxes} type="email" placeholder="Email" required /> <br></br>
+                <input style={useStyles.Boxes} type="password" placeholder="Password" required /> <br></br>
             </div>
         </div> 
-    )
-}
+    )}
 
 export default Login;
