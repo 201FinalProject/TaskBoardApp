@@ -1,0 +1,81 @@
+.IndivTask {
+    position: relative;
+    left: 168px;
+    top: 32px;
+    bottom: 32px;
+    right: 595px;
+width: 677px;
+height: 154px;
+
+background: #FFBDA0;
+box-shadow: inset 2px 0px 0px #000000, inset -2px 0px 0px #000000, inset 0px -2px 0px #000000, inset 0px 2px 0px #000000;
+border-radius: 36px;
+}
+
+.TaskName1 {
+    position: relative;
+left: 8.88px;
+right: 321.72px;
+top: 5.57px;
+bottom: 115.04px;
+
+font-family: 'Sora';
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 30px;
+
+color: #000000;
+}
+
+.TaskList {
+    list-style-type: none; /* Remove bullets */
+}
+
+.CompletedBy1 {
+    position: relative;
+left: 14px;
+right: 526px;
+top: 8.04px;
+bottom: 15px;
+
+font-family: 'Sora';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 23px;
+
+color: #000000;
+}
+
+.Difficulty1 {
+position: relative;
+left: 14px;
+right: 573px;
+top: 15px;
+bottom: 14px;
+
+font-family: 'Sora';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 23px;
+
+color: #000000;
+}
+
+.CompletionDate1 {
+position: relative;
+left: 14px;
+right: 492px;
+top: 14px;
+bottom: 24px;
+
+font-family: 'Sora';
+font-style: normal;
+font-weight: 300;
+font-size: 18px;
+line-height: 23px;
+
+color: #000000;
+}

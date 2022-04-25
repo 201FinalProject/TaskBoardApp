@@ -13,6 +13,12 @@ function Navbar() {
           <Link to="/login" className="login-button">
             Login
           </Link>
+          
+        </li>
+        <li>
+          <Link to="/history" className="history-button">
+            History (temporary)
+          </Link>
         </li>
       </ul>
       </nav>
