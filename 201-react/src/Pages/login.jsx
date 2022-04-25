@@ -1,4 +1,6 @@
 import React from "react";
+import ReactDOM from 'react-dom';
+import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 import {render} from 'react-dom';
 import "@fontsource/dm-sans";
 
@@ -40,7 +42,30 @@ const useStyles = {
         margin: "auto",
         fontFamily: "DM Sans",
         background: "#FFCFA403"
+    },
+
+    InnerGuestLogin: {
+        textAlign: "center", 
+        marginTop: "0px",
+        marginBottom: "-5px",
+        marginRight: "230px",
+        fontFamily: "DM Sans",
+        fontSize: "28px",
+        fontWeight: "700",
+        lineHeight: "62px",
+        letterSpacing: "0em",
+        textAlign: "center",
+        color: "#000000"
+
+    },
+
+    Link: {
+        textAlign: "center",
+        fontFamily: "DM Sans",
+        color: "#000000"
+
     }
+
 
 }
 
@@ -52,6 +77,11 @@ function Login(){
                 <h3 style={useStyles.InnerLogin}>Login</h3>
                 <input style={useStyles.Boxes} type="email" placeholder="Email" required /> <br></br>
                 <input style={useStyles.Boxes} type="password" placeholder="Password" required /> <br></br>
+                <h3 style={useStyles.InnerGuestLogin}>Guest Login</h3>
+                <input style={useStyles.Boxes} type="text" placeholder="Group Code" required /> <br></br>
+                <div style={useStyles.Link} >
+                <Link to='/Register'><u>Create New Account</u></Link>
+                </div>
             </div>
         </div> 
     )}
