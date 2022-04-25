@@ -8,9 +8,9 @@ function CreateGroup(){
         <div id="Main" style={{marginTop: "100px"}}>
             <div id="FormContainer">
                 <form>
-                    <button type="submit" name="CreateGroup">Create Group</button>
+                    <button type="submit" name="CreateGroup" id="CreateGroup">Create Group</button>
                     <input type="text" id="JoinGroup" name="JoinGroup" placeholder="Join Group"/>
-                    <button type="submit" name="Register">Create Account</button>
+                    <button type="submit" name="Enter" id="Enter">Enter</button>
                 </form>
             </div>
         </div>
