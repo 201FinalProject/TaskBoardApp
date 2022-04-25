@@ -1,12 +1,13 @@
 import React from "react";
 import GroupSelect from "../Components/GroupSelectButton/GroupSelect"
 import PageHeader from "../Components/PageHeader/PageHeader"
+import './Register.css';
 
 function Register(){
     return(
-        <div style={{marginTop: "100px"}}>
+        <div id="Main" style={{marginTop: "100px"}}>
             <h1>Register</h1>
-            <div>
+            <div id="FormContainer">
                 <form>
                     <input type="text" id="Username" name="Username" placeholder="Username"/>
                     <input type="text" id="Email" name="Email" placeholder="Email"/>
@@ -19,4 +20,4 @@ function Register(){
     )
 }
 
-export default HomePage;
+export default Register;
