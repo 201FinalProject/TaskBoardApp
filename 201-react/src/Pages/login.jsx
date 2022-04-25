@@ -18,7 +18,6 @@ const useStyles = {
     },
 
     InnerLogin: {
-        textAlign: "center", 
         marginTop: "100px",
         marginBottom: "-5px",
         marginRight: "320px",
@@ -54,7 +53,6 @@ const useStyles = {
         fontWeight: "700",
         lineHeight: "62px",
         letterSpacing: "0em",
-        textAlign: "center",
         color: "#000000"
 
     },
@@ -75,10 +73,10 @@ function Login(){
             <h1 style={useStyles.InnerBox}>Login</h1>
             <div>
                 <h3 style={useStyles.InnerLogin}>Login</h3>
-                <input style={useStyles.Boxes} type="email" placeholder="Email" required /> <br></br>
-                <input style={useStyles.Boxes} type="password" placeholder="Password" required /> <br></br>
+                <input style={useStyles.Boxes} type="email" placeholder="Email" /> <br></br>
+                <input style={useStyles.Boxes} type="password" placeholder="Password" /> <br></br>
                 <h3 style={useStyles.InnerGuestLogin}>Guest Login</h3>
-                <input style={useStyles.Boxes} type="text" placeholder="Group Code" required /> <br></br>
+                <input style={useStyles.Boxes} placeholder="Group Code" /> <br></br>
                 <div style={useStyles.Link} >
                 <Link to='/Register'><u>Create New Account</u></Link>
                 </div>
