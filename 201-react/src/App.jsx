@@ -17,7 +17,6 @@ function App(){
             <Route path="/" element={<HomePage/>}/>
             <Route path="/history" element={<HistoryPage/>}/>
         </Routes>
-        <Register></Register>
       </div>
     </BrowserRouter>
   )
