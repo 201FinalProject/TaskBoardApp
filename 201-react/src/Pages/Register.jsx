@@ -9,10 +9,10 @@ function Register(){
             <h1>Register</h1>
             <div id="FormContainer">
                 <form>
-                    <input type="text" id="Username" name="Username" placeholder="Username"/>
-                    <input type="text" id="Email" name="Email" placeholder="Email"/>
-                    <input type="text" id="Password" name="Password" placeholder="Password"/>
-                    <input type="text" id="ConfirmPass" name="ConfirmPass" placeholder="Confirm Password"/>
+                    <input id="Username" name="Username" placeholder="Username"/>
+                    <input type="email" id="Email" name="Email" placeholder="Email"/>
+                    <input type="password" id="Password" name="Password" placeholder="Password"/>
+                    <input type="password" id="ConfirmPass" name="ConfirmPass" placeholder="Confirm Password"/>
                     <button type="submit" name="Register">Create Account</button>
                 </form>
             </div>
