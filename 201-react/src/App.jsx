@@ -17,6 +17,7 @@ function App(){
             <Route path="/login" element={<Login/>} />
             <Route path="/" element={<HomePage/>}/>
             <Route path="/history" element={<HistoryPage/>}/>
+            <Route path="/Register" element={<Register></Register>}/>
         </Routes>
         <CreateGroup></CreateGroup>
       </div>
