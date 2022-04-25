@@ -6,6 +6,7 @@ import './App.css';
 import HomePage from './Pages/HomePage';
 import Register from './Pages/Register';
 import HistoryPage from './Pages/HistoryPage';
+import CreateGroup from './Pages/CreateGroup';
 
 function App(){
   return (
@@ -17,6 +18,7 @@ function App(){
             <Route path="/" element={<HomePage/>}/>
             <Route path="/history" element={<HistoryPage/>}/>
         </Routes>
+        <CreateGroup></CreateGroup>
       </div>
     </BrowserRouter>
   )
