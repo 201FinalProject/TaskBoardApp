@@ -1,0 +1,106 @@
+.main{
+    margin: auto;
+    margin-left: 110px;
+}
+
+#title{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    color: #000000;
+}
+
+label{
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 49px;
+    color: #000000;
+}
+
+input{
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 28px;
+    line-height: 35px;
+    color: #000000;
+}
+
+.row{
+    margin-bottom: 36px;
+}
+
+#title-id{
+    width: 54.35%;
+    height: 6%;
+    margin-right: 1.875%
+}
+
+#member-id{
+    width: 50.2%;
+    height: 6%;
+}
+
+#description-id{
+    width: 64.2%;
+    height: 388px;
+    margin-bottom: 2%;
+}
+
+#date-id{
+    width: 49.2%;
+}
+
+.save{
+    background-color: #8DC2FF;
+    color: #FFFFFF;
+    border-radius: 4px;
+    margin-right: 1.875%;
+    box-shadow: none;
+    width: 123px;
+    height: 6%;
+
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.cancel{
+    background-color: #8F8F8F;
+    color: #FFFFFF;
+    border-radius: 4px;
+    width: 123px;
+    height: 6%;
+
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+}
+
+.delete{
+    background-color: #FF7759;
+    color: #FFFFFF;
+    border-radius: 4px;
+
+    width: 218px;
+    height: 61px;
+
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    float: right;
+    margin-right: 111px;
+}
