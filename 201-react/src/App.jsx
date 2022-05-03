@@ -19,7 +19,7 @@ function App(){
             <Route path="/history" element={<HistoryPage/>}/>
             <Route path="/Register" element={<Register></Register>}/>
         </Routes>
-        <CreateGroup></CreateGroup>
+        
       </div>
     </BrowserRouter>
   )
