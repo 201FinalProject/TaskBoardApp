@@ -1,19 +1,19 @@
 #Main {
     margin: auto;
     font-size: 20px;
-    width: 40%;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
+
     font-family: DM Sans;
     font-size: 42px;
     font-weight: 700;
     line-height: 62px;
-    letter-Spacing: 0em;
     color: #000000;
     text-decoration: underline;
-    margin-bottom: -100px;
+    margin-bottom: 100px;
 }
 
 
@@ -23,19 +23,30 @@ input {
     border-radius: 4px;
     background: rgba(255, 207, 164, 0.01);
     box-shadow: inset 0px -1px 0px #000000, inset 1px 0px 0px #000000, inset -1px 0px 0px #000000, inset 0px 1px 0px #000000;
-    margin-top: 20px;
     font-family: DM Sans;
-    display: inline-block;
+    display: block;
     background: #FFCFA403;
 }
 
+#FormContainer {
+}
+
+.container {
+    height: 50px;
+    position: absolute;  
+}
+  
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+}
+
 button {
-    margin-top: 30px;
     height: 40px;
+    width: 120px;
     box-shadow: inset 0px -1px 0px #000000, inset 1px 0px 0px #000000, inset -1px 0px 0px #000000, inset 0px 1px 0px #000000;
     caret-color: transparent;
     text-align: center;
-    box-sizing: border-box;
     background-color: #87CEFA;
-    display: block;
 }
