@@ -20,7 +20,6 @@ function App() {
             <Route path="/Register" element={<Register></Register>}/>
             <Route path="/CreateGroup" element={<CreateGroup/>}/>
         </Routes>
-        <CreateGroup></CreateGroup>
       </div>
     </BrowserRouter>
   );
