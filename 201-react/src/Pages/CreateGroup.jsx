@@ -9,8 +9,10 @@ function CreateGroup(){
             <div id="FormContainer">
                 <form>
                     <button type="submit" name="CreateGroup" id="CreateGroup">Create Group</button>
-                    <input type="text" id="JoinGroup" name="JoinGroup" placeholder="Join Group"/>
-                    <button type="submit" name="Enter" id="Enter">Enter</button>
+                    <div id="BottomRow">
+                        <input type="text" id="JoinGroup" name="JoinGroup" placeholder="Join Group"/>
+                        <button type="submit" name="Enter" id="Enter">Enter</button>
+                    </div>
                 </form>
             </div>
         </div>
