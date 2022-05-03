@@ -1,6 +1,6 @@
 import React from "react";
-import GroupSelect from "../Components/GroupSelectButton/GroupSelect"
-import PageHeader from "../Components/PageHeader/PageHeader"
+import GroupSelect from "../../Components/GroupSelectButton/GroupSelect";
+import PageHeader from "../../Components/PageHeader/PageHeader";
 import './HomePage.css';
 
 function HomePage(){

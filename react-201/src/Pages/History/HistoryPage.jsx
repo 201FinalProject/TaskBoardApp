@@ -1,6 +1,6 @@
 import React from "react";
-import PageHeader from "../Components/PageHeader/PageHeader"
-import HistoryTask from "../Components/HistoryTask/HistoryTask"
+import PageHeader from "../../Components/PageHeader/PageHeader";
+import HistoryTask from "../../Components/HistoryTask/HistoryTask";
 
 function HistoryPage(){
     return(

@@ -19,7 +19,9 @@ function Navbar() {
           <Link to="/history" className="history-button">
             History
           </Link>
-          <Link to="\taskcreate">
+        </li>
+        <li>
+          <Link to="/taskcreate">
             Create Task
           </Link>
         </li>

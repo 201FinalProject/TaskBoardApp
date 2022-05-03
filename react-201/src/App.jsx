@@ -1,12 +1,12 @@
 import React from 'react';
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
-import Login from './Pages/login';
+import Login from './Pages/Login/Login';
 import './App.css';
-import HomePage from './Pages/HomePage';
-import Register from './Pages/Register';
-import HistoryPage from './Pages/HistoryPage';
-import CreateGroup from './Pages/CreateGroup';
+import HomePage from './Pages/Home/HomePage';
+import Register from './Pages/Register/Register';
+import HistoryPage from './Pages/History/HistoryPage';
+import CreateGroup from './Pages/CreateGroup/CreateGroup';
 
 function App() {
   return (
