@@ -5,11 +5,26 @@ import './HomePage.css';
 
 function HomePage(){
     return(
-        <div style={{marginTop: "100px"}}>
+        <div id="mainHome">
             <PageHeader name="Home"></PageHeader>
             <div>
-            <h2 id="dividerHeader">Groups</h2>
-            <hr id="divider"></hr>
+                <div id="headerDiv">
+                    <h2 id="dividerHeader">My Tasks</h2>
+                </div>
+                <hr id="divider"></hr>
+            </div>
+            <h2 id="temp">INSERT CALENDAR</h2>
+            <div id="mainDiv">
+                <div id="headerDiv">
+                    <h2 id="dividerHeader">Groups</h2>
+                </div>
+                <div id="buttonDiv">
+                    <button type="button" id="GroupButton">
+                        <i class="fa fa-plus" aria-hidden="true"></i>
+                        Create/Join Group
+                    </button>
+                </div>
+                <hr id="divider"></hr>
             </div>
             
             <GroupSelect></GroupSelect>
