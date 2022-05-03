@@ -14,7 +14,7 @@ h1 {
     line-height: 62px;
     letter-Spacing: 0em;
     color: #000000;
-    margin-bottom: 100px;
+    margin-bottom: 80px;
 }
 
 .inputsContainer {
@@ -24,6 +24,7 @@ h1 {
 
 #FormContainer {
     width: 30%;
+    margin-bottom: 20px;
     margin: auto;
 }
 

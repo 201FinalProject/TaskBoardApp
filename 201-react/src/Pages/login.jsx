@@ -59,12 +59,12 @@ const useStyles = {
 
     },
 
-    Link: {
+    linkToRegister: {
         textAlign: "center",
         fontFamily: "DM Sans",
         color: "#000000",
         marginTop: "20px",
-        marginBottom: "-100px"
+        marginBottom: "90px"
     },
 
     loginButton: {
@@ -123,7 +123,7 @@ function Login(){
                         <button style={useStyles.guestLoginButton} type="submit" name="Register">Guest Login</button>
                     </div>
                 </div>
-                <div style={useStyles.Link} >
+                <div style={useStyles.linkToRegister} >
                 <Link to='/Register'><u>Create New Account</u></Link>
                 </div>
             </div>

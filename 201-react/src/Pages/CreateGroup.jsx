@@ -5,7 +5,7 @@ import './CreateGroup.css';
 
 function CreateGroup(){
     return(
-        <div id="Main" style={{marginTop: "100px"}}>
+        <div id="Main" >
             <div id="FormContainer">
                 <form>
                     <button type="submit" name="CreateGroup" id="CreateGroup">Create Group</button>
