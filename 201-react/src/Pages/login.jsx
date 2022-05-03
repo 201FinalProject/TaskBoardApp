@@ -8,13 +8,16 @@ const useStyles = {
     InnerBox: {
         textAlign: "center", 
         marginTop: "100px",
+        marginBottom: "130px",
         fontFamily: "DM Sans",
         fontSize: "42px",
         fontWeight: "700",
         lineHeight: "62px",
         letterSpacing: "0em",
         textAlign: "center",
-        color: "#000000"
+        color: "#000000",
+        textDecoration: "underline"
+
     },
 
     InnerLogin: {

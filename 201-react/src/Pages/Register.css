@@ -7,31 +7,31 @@
 
 h1 {
     text-align: center;
-    margin-top: 100px;
     font-family: DM Sans;
     font-size: 42px;
     font-weight: 700;
     line-height: 62px;
     letter-Spacing: 0em;
     color: #000000;
+    text-decoration: underline;
+    margin-bottom: -100px;
 }
 
 #FormContainer {
-    margin-top: 200px;
     width: 30%;
     margin: auto;
 }
 
-input[type=text], select{
+input, select{
     height: 61.359771728515625px;
     width: 383.42926025390625px;
     border-radius: 4px;
     background: rgba(255, 207, 164, 0.01);
     box-shadow: inset 0px -1px 0px #000000, inset 1px 0px 0px #000000, inset -1px 0px 0px #000000, inset 0px 1px 0px #000000;
-    margin: auto;
+    margin-top: 20px;
     font-family: DM Sans;
+    display: block;
     background: #FFCFA403;
-    text-align: center;
 }
 
 button {
