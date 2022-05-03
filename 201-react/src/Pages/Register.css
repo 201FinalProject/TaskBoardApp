@@ -10,11 +10,11 @@ h1 {
     font-family: DM Sans;
     font-size: 42px;
     font-weight: 700;
+    
     line-height: 62px;
     letter-Spacing: 0em;
     color: #000000;
-    text-decoration: underline;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
 }
 
 .inputsContainer {
@@ -42,6 +42,7 @@ input, select{
 button {
     margin-top: 20px;
     height: 2.5em;
+    width: 390px;
     caret-color: transparent;
     text-align: center;
     box-sizing: border-box;

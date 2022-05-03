@@ -7,8 +7,8 @@ import "@fontsource/dm-sans";
 const useStyles = {
     InnerBox: {
         textAlign: "center", 
+        marginBottom: "60px",
         marginTop: "100px",
-        marginBottom: "130px",
         fontFamily: "DM Sans",
         fontSize: "42px",
         fontWeight: "700",
@@ -21,7 +21,6 @@ const useStyles = {
     },
 
     InnerLogin: {
-        marginTop: "100px",
         marginBottom: "-5px",
         marginRight: "320px",
         fontFamily: "DM Sans",
@@ -50,7 +49,7 @@ const useStyles = {
         textAlign: "center", 
         marginTop: "0px",
         marginBottom: "-5px",
-        marginRight: "230px",
+        marginRight: "235px",
         fontFamily: "DM Sans",
         fontSize: "28px",
         fontWeight: "700",
@@ -63,14 +62,48 @@ const useStyles = {
     Link: {
         textAlign: "center",
         fontFamily: "DM Sans",
-        color: "#000000"
+        color: "#000000",
+        marginTop: "20px",
+        marginBottom: "-100px"
+    },
 
-    }
+    loginButton: {
+        marginTop: "20px",
+        width: "390px",
+        height: "2.5em",
+        caretColor: "transparent",
+        textAlign: "center",
+        boxSizing: "border-box",
+        fontFamily: "DM Sans",
+        fontSize: "1em",
+        backgroundColor: "#87CEFA",
+        display: "block",
+        margin: "auto",
+        cursor: "pointer"
+    },
+
+    guestLoginButton: {
+        height: "2.5em",
+        width: "390px",
+        caretColor: "transparent",
+        textAlign: "center",
+        boxSizing: "border-box",
+        fontSize: "1em",
+        fontFamily: "DM Sans",
+        marginBottom: "30px",
+        backgroundColor: "#87CEFA",
+        display: "block",
+        margin: "auto",
+        cursor: "pointer"
+    },
+
+    
 
 
 }
 
 function Login(){
+
     return(
         <div >
             <h1 style={useStyles.InnerBox}>Login</h1>
@@ -78,8 +111,18 @@ function Login(){
                 <h3 style={useStyles.InnerLogin}>Login</h3>
                 <input style={useStyles.Boxes} type="email" placeholder="Email" /> <br></br>
                 <input style={useStyles.Boxes} type="password" placeholder="Password" /> <br></br>
+                <div class="container">
+                    <div class="vertical-center">
+                        <button style={useStyles.loginButton} type="submit" name="Register">Login</button>
+                    </div>
+                </div>
                 <h3 style={useStyles.InnerGuestLogin}>Guest Login</h3>
                 <input style={useStyles.Boxes} placeholder="Group Code" /> <br></br>
+                <div style={useStyles.guestContainer}>
+                    <div style={useStyles.guestVerticalCenter}>
+                        <button style={useStyles.guestLoginButton} type="submit" name="Register">Guest Login</button>
+                    </div>
+                </div>
                 <div style={useStyles.Link} >
                 <Link to='/Register'><u>Create New Account</u></Link>
                 </div>
