@@ -1,0 +1,16 @@
+#dividerHeader {
+    margin-left: 8%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    width: 60%;
+}
+#divider {
+
+    margin-left: 7%;
+    width: 84%;
+    background-color: black;
+    height: 2px;
+    border-style: none;
+    margin-top: 1px;
+}
+
