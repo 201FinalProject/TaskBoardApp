@@ -8,7 +8,7 @@ import Register from './Pages/Register';
 import HistoryPage from './Pages/HistoryPage';
 import CreateGroup from './Pages/CreateGroup';
 
-function App(){
+function App() {
   return (
     <BrowserRouter>
       <div>
@@ -23,7 +23,7 @@ function App(){
         <CreateGroup></CreateGroup>
       </div>
     </BrowserRouter>
-  )
+  );
 }
 
 export default App;
