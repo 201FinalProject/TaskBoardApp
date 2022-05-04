@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import GroupService from '../services/GroupService';
+import GroupService from '../../services/GroupService';
 
 class CreateGroupComponent extends Component {
     constructor(props) {
