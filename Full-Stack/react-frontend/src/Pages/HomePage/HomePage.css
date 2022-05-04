@@ -1,8 +1,9 @@
 #mainHome {
-    margin-top: 100px; 
+    
     width: 100%;
     background-image: url("../../LongBackground.png");
     background-size: cover;
+    height: 1500px;
     
 }
 

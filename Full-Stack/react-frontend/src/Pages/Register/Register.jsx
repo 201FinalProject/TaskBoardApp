@@ -1,6 +1,6 @@
 import React from "react";
 // import GroupSelect from "../../Components/GroupSelectButton/GroupSelect"
-import PageHeader from "../PageHeader/PageHeader"
+import PageHeader from "../../components/PageHeader/PageHeader"
 import './Register.css';
 import { Component } from "react";
 

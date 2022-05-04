@@ -1,9 +1,19 @@
 import React from "react";
-import PageHeader from "../../Components/PageHeader/PageHeader";
-import HistoryTask from "../../Components/HistoryTask/HistoryTask";
+import HistoryTask from "../../components/HistoryTask/HistoryTask";
+import { Component } from "react";
 
-function HistoryPage(){
-    return(
+
+export default class HistoryPage extends Component {
+    constructor(props) {
+      super(props);
+    
+  
+    
+    
+  }
+
+    render() {
+      return(
         <div style={{marginTop: "100px"}}>
             <p id="PHeader">History</p>
             <HistoryTask></HistoryTask>
@@ -12,7 +22,6 @@ function HistoryPage(){
             <HistoryTask></HistoryTask>
             
         </div>
-    )
+    )};
 }
 
-export default HistoryPage;
