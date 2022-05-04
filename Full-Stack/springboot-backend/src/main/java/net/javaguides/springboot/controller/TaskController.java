@@ -59,6 +59,7 @@ public class TaskController {
 		Task.setCompletedBy(TaskDetails.getCompletedBy());
 		Task.setDifficulty(TaskDetails.getDifficulty());
         Task.setCompletionDate(TaskDetails.getCompletionDate());
+        Task.setGroupCode(TaskDetails.getGroupCode());
 		
 		Task updatedTask = TaskRepository.save(Task);
 		return ResponseEntity.ok(updatedTask);
