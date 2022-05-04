@@ -51,6 +51,8 @@ class ListTaskComponent extends Component {
                                     <th> Task Name</th>
                                     <th> Task Completed By</th>
                                     <th> Task Difficulty</th>
+                                    <th> Task Completion Date</th>
+                                    <th> Task Group Code </th>
                                     <th> Actions</th>
                                 </tr>
                             </thead>
@@ -62,6 +64,8 @@ class ListTaskComponent extends Component {
                                              <td> { task.taskName} </td>   
                                              <td> {task.completedBy}</td>
                                              <td> {task.difficulty}</td>
+                                             <td> {task.completionDate}</td>
+                                             <td> {task.groupCode}</td>
                                              <td>
                                                  <button onClick={ () => this.editTask(task.id)} className="btn btn-info">Update </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteTask(task.id)} className="btn btn-danger">Delete </button>

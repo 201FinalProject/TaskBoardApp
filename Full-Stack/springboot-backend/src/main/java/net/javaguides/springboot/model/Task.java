@@ -24,8 +24,11 @@ public class Task {
 	@Column(name = "difficulty")
 	private double difficulty;
 
-    @Column(name = "date")
+    @Column(name = "completionDate")
     private String completionDate;
+    
+    @Column(name = "groupCode")
+	private String groupCode;
 	
 	public Task() {
 		
@@ -70,4 +73,12 @@ public class Task {
     public void setCompletionDate(String completionDate) {
         this.completionDate = completionDate;
     }
+    
+    public String getGroupCode() {
+        return this.groupCode;
+    }
+    public void setGroupCode(String groupCode) {
+        this.groupCode = groupCode;
+    }
+
 }
