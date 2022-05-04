@@ -29,19 +29,19 @@ public class UserController {
 	private UserRepository UserRepository;
 	
 	// get all Users
-	@GetMapping("/Users")
+	@GetMapping(value = { "/Users", "/Register" })
 	public List<User> getAllUsers(){
 		return UserRepository.findAll();
-	}		
+	}	
 	
 	// create User rest api
-	@PostMapping("/Users")
+	@PostMapping(value = { "/Users", "/Register" })
 	public User createUser(@RequestBody User User) {
 		return UserRepository.save(User);
 	}
 	
 	// get User by id rest api
-	@GetMapping("/Users/{id}")
+	@GetMapping(value = { "/Users/{id}", "/Register/{id}" })
 	public ResponseEntity<User> getUserById(@PathVariable Long id) {
 		User User = UserRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("User doesn't exist with id :" + id));
@@ -50,7 +50,7 @@ public class UserController {
 	
 	// update User rest api
 	
-	@PutMapping("/Users/{id}")
+	@PutMapping(value = { "/Users/{id}", "/Register/{id}" })
 	public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User UserDetails){
 		User User = UserRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("User not exist with id :" + id));
@@ -64,7 +64,7 @@ public class UserController {
 	}
 	
 	// delete User rest api
-	@DeleteMapping("/Users/{id}")
+	@DeleteMapping(value = { "/Users/{id}", "/Register/{id}" })
 	public ResponseEntity<Map<String, Boolean>> deleteUser(@PathVariable Long id){
 		User User = UserRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("User not exist with id :" + id));
