@@ -12,6 +12,10 @@ import ListTaskComponent from './components/ListTaskComponent.jsx';
 import CreateTaskComponent from './components/CreateTaskComponent.jsx';
 import ViewTaskComponent from './components/ViewTaskComponent.jsx';
 
+import ListUserComponent from './components/ListUserComponent.jsx';
+import CreateUserComponent from './components/CreateUserComponent.jsx';
+import ViewUserComponent from './components/ViewUserComponent.jsx';
+
 function App() {
   return (
     <div>
@@ -28,6 +32,11 @@ function App() {
                           <Route path = "/tasks" component = {ListTaskComponent}></Route>
                           <Route path = "/add-task/:id" component = {CreateTaskComponent}></Route>
                           <Route path = "/view-task/:id" component = {ViewTaskComponent}></Route>
+
+                          <Route path = "/" exact component = {ListUserComponent}></Route>
+                          <Route path = "/users" component = {ListUserComponent}></Route>
+                          <Route path = "/add-user/:id" component = {CreateUserComponent}></Route>
+                          <Route path = "/view-user/:id" component = {ViewUserComponent}></Route>
                           {/* <Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route> */}
                     </Switch>
                 </div>
