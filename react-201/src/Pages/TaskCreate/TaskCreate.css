@@ -1,3 +1,7 @@
+/* input, select{
+    all: unset;
+} */
+
 .main{
     margin: auto;
     max-width: 1050px;
@@ -79,7 +83,7 @@ input{
 }
 
 #difficulty{
-    margin-right: 45%;
+    margin-right: 2%;
     /* max-width: 918px; */
 }
 
