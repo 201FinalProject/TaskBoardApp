@@ -1,10 +1,20 @@
 import React from "react";
 import ReactDOM from 'react-dom';
+import PageHeader from "../../Components/PageHeader/PageHeader";
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 import {render} from 'react-dom';
 import "@fontsource/dm-sans";
+import background from "../../LongBackground.png"
+
 
 const useStyles = {
+    MainDivision: {
+        width: "100%",
+        backgroundImage: `url(${background}`,
+        backgroundSize: "cover",
+        height: "1024px"
+    },
+
     InnerBox: {
         textAlign: "center", 
         marginBottom: "60px",
@@ -105,8 +115,9 @@ const useStyles = {
 function Login(){
 
     return(
-        <div >
-            <h1 style={useStyles.InnerBox}>Login</h1>
+        <div style={useStyles.MainDivision}>
+            <PageHeader name="Login"></PageHeader>
+            {/* {<h1 style={useStyles.InnerBox}>Login</h1>} */}
             <div>
                 <h3 style={useStyles.InnerLogin}>Login</h3>
                 <input style={useStyles.Boxes} type="email" placeholder="Email" /> <br></br>
