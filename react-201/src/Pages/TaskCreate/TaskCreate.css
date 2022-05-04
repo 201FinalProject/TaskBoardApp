@@ -1,7 +1,8 @@
 .main{
     margin: auto;
-    margin-left: 110px;
-    margin-right: 110px;
+    max-width: 1050px;
+    /* margin-left: 7.5%;
+    margin-right: 7.5%; */
 }
 
 #title{
@@ -79,7 +80,7 @@ input{
 
 #difficulty{
     margin-right: 45%;
-    max-width: 918px;
+    /* max-width: 918px; */
 }
 
 
