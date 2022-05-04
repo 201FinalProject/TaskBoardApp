@@ -56,8 +56,8 @@ public class GroupController {
 				.orElseThrow(() -> new ResourceNotFoundException("Group not exist with id :" + id));
 		
 		Group.setUserID(GroupDetails.getUserID());
-		Group.setGroupID(GroupDetails.getGroupID());
-
+		Group.setGroupCode(GroupDetails.getGroupCode());
+		
 		Group updatedGroup = GroupRepository.save(Group);
 		return ResponseEntity.ok(updatedGroup);
 	}

@@ -59,7 +59,7 @@ class ListGroupComponent extends Component {
                                         group => 
                                         <tr key = {group.id}>
                                              <td> { group.userID} </td>   
-                                             <td> {group.groupID}</td>
+                                             <td> {group.groupCode}</td>
                                              <td>
                                                  <button onClick={ () => this.editGroup(group.id)} className="btn btn-info">Update </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteGroup(group.id)} className="btn btn-danger">Delete </button>

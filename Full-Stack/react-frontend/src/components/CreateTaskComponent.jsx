@@ -11,7 +11,8 @@ class CreateTaskComponent extends Component {
             taskName: '',
             completedBy: '',
             difficulty: '',
-            completionDate: ''
+            completionDate: '',
+            groupCode:''
         }
         this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
         this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
@@ -30,14 +31,15 @@ class CreateTaskComponent extends Component {
                 this.setState({taskName: task.taskName,
                     completedBy: task.completedBy,
                     difficulty: task.difficulty,
-                    completionDate: task.completionDate
+                    completionDate: task.completionDate,
+                    groupCode: task.groupCode
                 });
             });
         }        
     }
     saveOrUpdateTask = (e) => {
         e.preventDefault();
-        let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, difficulty: this.state.difficulty};
+        let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, difficulty: this.state.difficulty, completionDate: this.state.completionDate, groupCode: this.state.groupCode};
         console.log('task => ' + JSON.stringify(task));
 
         // step 5
@@ -62,6 +64,14 @@ class CreateTaskComponent extends Component {
 
     changeDifficultyHandler= (event) => {
         this.setState({difficulty: event.target.value});
+    }
+
+    changeCompletionDateHandler= (event) => {
+        this.setState({completionDate: event.target.value});
+    }
+
+    changeGroupCodeHandler= (event) => {
+        this.setState({groupCode: event.target.value});
     }
 
     cancel(){
@@ -102,6 +112,20 @@ class CreateTaskComponent extends Component {
                                             <input placeholder="Difficulty" name="difficulty" className="form-control" 
                                                 value={this.state.difficulty} onChange={this.changeDifficultyHandler}/>
                                         </div>
+
+                                        <div className = "form-group">
+                                            <label> Completion Date: </label>
+                                            <input placeholder="Completion Date" name="completionDate" className="form-control" 
+                                                value={this.state.completionDate} onChange={this.changeCompletionDateHandler}/>
+                                        </div>
+
+                                        <div className = "form-group">
+                                            <label> Group Code: </label>
+                                            <input placeholder="Group Code" name="groupCode" className="form-control" 
+                                                value={this.state.groupCode} onChange={this.changeGroupCodeHandler}/>
+                                        </div>
+
+                                    
 
                                         <button className="btn btn-success" onClick={this.saveOrUpdateTask}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>

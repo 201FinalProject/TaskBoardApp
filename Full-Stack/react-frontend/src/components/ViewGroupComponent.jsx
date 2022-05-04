@@ -30,7 +30,7 @@ class ViewGroupComponent extends Component {
                         </div>
                         <div className = "row">
                             <label> Group ID: </label>
-                            <div> { this.state.group.groupID}</div>
+                            <div> { this.state.group.groupCode}</div>
                         </div>
                     </div>
 

@@ -9,7 +9,7 @@ class CreateGroupComponent extends Component {
             // step 2
             id: this.props.match.params.id,
             userID: '',
-            groupID: '',
+            groupCode: '',
         }
         this.changeUserIDHandler = this.changeUserIDHandler.bind(this);
         this.changeGroupIDHandler = this.changeGroupIDHandler.bind(this);
@@ -26,7 +26,7 @@ class CreateGroupComponent extends Component {
             GroupService.getGroupById(this.state.id).then( (res) =>{
                 let group = res.data;
                 this.setState({userID: group.userID,
-                    groupID: group.groupID,
+                    groupCode: group.groupCode,
     
                 });
             });
@@ -34,7 +34,7 @@ class CreateGroupComponent extends Component {
     }
     saveOrUpdateGroup = (e) => {
         e.preventDefault();
-        let group = {userID: this.state.userID, groupID: this.state.groupID};
+        let group = {userID: this.state.userID, groupCode: this.state.groupCode};
         console.log('group => ' + JSON.stringify(group));
 
         // step 5
@@ -54,7 +54,7 @@ class CreateGroupComponent extends Component {
     }
 
     changeGroupIDHandler= (event) => {
-        this.setState({groupID: event.target.value});
+        this.setState({groupCode: event.target.value});
     }
 
 
@@ -88,8 +88,8 @@ class CreateGroupComponent extends Component {
                                         </div>
                                         <div className = "form-group">
                                             <label> GroupID: </label>
-                                            <input placeholder="Group ID" name="groupID" className="form-control" 
-                                                value={this.state.groupID} onChange={this.changeGroupIDHandler}/>
+                                            <input placeholder="Group ID" name="groupCode" className="form-control" 
+                                                value={this.state.groupCode} onChange={this.changeGroupIDHandler}/>
                                         </div>
                                        
 

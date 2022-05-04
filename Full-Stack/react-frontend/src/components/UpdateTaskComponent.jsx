@@ -7,28 +7,32 @@ class UpdateTaskComponent extends Component {
 
         this.state = {
             id: this.props.match.params.id,
-            userName: '',
-            pass: '',
-            email: ''
+            taskName: '',
+            completedBy: '',
+            difficulty: '',
+            completionDate: '',
+            groupCode:''
         }
-        this.changeUserNameHandler = this.changeUserNameHandler.bind(this);
-        this.changePasswordHandler = this.changePasswordHandler.bind(this);
+        this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
+        this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
         this.updateTask = this.updateTask.bind(this);
     }
 
     componentDidMount(){
         TaskService.getTaskById(this.state.id).then( (res) =>{
             let task = res.data;
-            this.setState({userName: task.userName,
-                pass: task.pass,
-                email : task.email
+            this.setState({taskName: task.taskName,
+                completedBy: task.completedBy,
+                difficulty: task.difficulty,
+                completionDate: task.completionDate,
+                groupCode: task.groupCode
             });
         });
     }
 
     updateTask = (e) => {
         e.preventDefault();
-        let task = {userName: this.state.userName, pass: this.state.pass, email: this.state.email};
+        let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, difficulty: this.state.difficulty, completionDate: this.state.completionDate, groupCode: this.state.groupCode};
         console.log('task => ' + JSON.stringify(task));
         console.log('id => ' + JSON.stringify(this.state.id));
         TaskService.updateTask(task, this.state.id).then( res => {
@@ -36,16 +40,24 @@ class UpdateTaskComponent extends Component {
         });
     }
     
-    changeUserNameHandler= (event) => {
-        this.setState({userName: event.target.value});
+    changeTaskNameHandler= (event) => {
+        this.setState({taskName: event.target.value});
     }
 
-    changePasswordHandler= (event) => {
-        this.setState({pass: event.target.value});
+    changeCompletedByHandler= (event) => {
+        this.setState({completedBy: event.target.value});
     }
 
-    changeEmailHandler= (event) => {
-        this.setState({email: event.target.value});
+    changeDifficultyHandler= (event) => {
+        this.setState({difficulty: event.target.value});
+    }
+
+    changeCompletionDateHandler= (event) => {
+        this.setState({completionDate: event.target.value});
+    }
+
+    changeGroupCodeHandler= (event) => {
+        this.setState({groupCode: event.target.value});
     }
 
     cancel(){
@@ -62,20 +74,32 @@ class UpdateTaskComponent extends Component {
                                 <h3 className="text-center">Update Task</h3>
                                 <div className = "card-body">
                                     <form>
-                                        <div className = "form-group">
-                                            <label> First Name: </label>
-                                            <input placeholder="First Name" name="userName" className="form-control" 
-                                                value={this.state.userName} onChange={this.changeUserNameHandler}/>
+                                    <div className = "form-group">
+                                            <label> Task Name: </label>
+                                            <input placeholder="Task Name" name="taskName" className="form-control" 
+                                                value={this.state.taskName} onChange={this.changeTaskNameHandler}/>
                                         </div>
                                         <div className = "form-group">
-                                            <label> Last Name: </label>
-                                            <input placeholder="Last Name" name="pass" className="form-control" 
-                                                value={this.state.pass} onChange={this.changePasswordHandler}/>
+                                            <label> Completed By: </label>
+                                            <input placeholder="Completed By" name="completedBy" className="form-control" 
+                                                value={this.state.completedBy} onChange={this.changeCompletedByHandler}/>
                                         </div>
                                         <div className = "form-group">
-                                            <label> Email Id: </label>
-                                            <input placeholder="Email Address" name="email" className="form-control" 
-                                                value={this.state.email} onChange={this.changeEmailHandler}/>
+                                            <label> Difficulty: </label>
+                                            <input placeholder="Difficulty" name="difficulty" className="form-control" 
+                                                value={this.state.difficulty} onChange={this.changeDifficultyHandler}/>
+                                        </div>
+
+                                        <div className = "form-group">
+                                            <label> Completion Date: </label>
+                                            <input placeholder="Completion Date" name="completionDate" className="form-control" 
+                                                value={this.state.completionDate} onChange={this.changeCompletionDateHandler}/>
+                                        </div>
+
+                                        <div className = "form-group">
+                                            <label> Group Code: </label>
+                                            <input placeholder="Group Code" name="groupCode" className="form-control" 
+                                                value={this.state.groupCode} onChange={this.changeGroupCodeHandler}/>
                                         </div>
 
                                         <button className="btn btn-success" onClick={this.updateTask}>Save</button>

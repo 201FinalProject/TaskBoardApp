@@ -36,6 +36,14 @@ class ViewTaskComponent extends Component {
                             <label> Task Difficulty: </label>
                             <div> { this.state.task.difficulty }</div>
                         </div>
+                        <div className = "row">
+                            <label> Task Completion Date: </label>
+                            <div> { this.state.task.completionDate }</div>
+                        </div>
+                        <div className = "row">
+                            <label> Group Code: </label>
+                            <div> { this.state.task.groupCode }</div>
+                        </div>
                     </div>
 
                 </div>

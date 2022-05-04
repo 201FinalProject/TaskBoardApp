@@ -24,6 +24,7 @@ public class User {
 	@Column(name = "email")
 	private String email;
 	
+
 	public User() {
 		
 	}
@@ -59,5 +60,8 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
+    
+
+
 
 }
