@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router, Switch, Route, Routes, Link } from 'react-router-dom';
 import {render} from 'react-dom';
 import "@fontsource/dm-sans";
-import PageHeader from "./PageHeader.jsx";
-import background from "../LongBackground.png";
+import PageHeader from "../PageHeader/PageHeader.jsx";
+import background from "../../LongBackground.png";
 
 
 const useStyles = {

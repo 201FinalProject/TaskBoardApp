@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import EmployeeService from '../services/EmployeeService'
+import EmployeeService from '../../services/EmployeeService'
 
 class ViewEmployeeComponent extends Component {
     constructor(props) {

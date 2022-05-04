@@ -1,12 +1,12 @@
 import React from "react";
-import GroupSelect from "../../Components/GroupSelectButton/GroupSelect";
-import PageHeader from "../../Components/PageHeader/PageHeader";
+// import GroupSelect from "../../Components/GroupSelectButton/GroupSelect";
+// import PageHeader from "../../Components/PageHeader/PageHeader";
 import './HomePage.css';
 
 function HomePage(){
     return(
         <div id="mainHome">
-            <PageHeader name="Home"></PageHeader>
+            {/* <PageHeader name="Home"></PageHeader> */}
             <div>
                 <div id="headerDiv">
                     <h2 id="dividerHeader">My Tasks</h2>
@@ -27,9 +27,9 @@ function HomePage(){
                 <hr id="divider"></hr>
             </div>
             
+            {/* <GroupSelect></GroupSelect>
             <GroupSelect></GroupSelect>
-            <GroupSelect></GroupSelect>
-            <GroupSelect></GroupSelect>
+            <GroupSelect></GroupSelect> */}
         </div>
     )
 }
