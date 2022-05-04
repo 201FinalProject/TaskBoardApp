@@ -36,7 +36,7 @@ h1 {
     margin: auto;
 }
 
-input, select{
+.test, select{
     height: 61.359771728515625px;
     width: 383.42926025390625px;
     border-radius: 4px;
