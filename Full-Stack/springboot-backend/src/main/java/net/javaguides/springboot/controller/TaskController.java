@@ -27,21 +27,21 @@ public class TaskController {
 
 	@Autowired
 	private TaskRepository TaskRepository;
-	
+
 	// get all Tasks
-	@GetMapping("/Tasks")
+	@GetMapping(value = {"/Tasks", "/History"})
 	public List<Task> getAllTasks(){
 		return TaskRepository.findAll();
 	}		
 	
 	// create Task rest api
-	@PostMapping("/Tasks")
+	@PostMapping(value = {"/Tasks", "/History"})
 	public Task createTask(@RequestBody Task Task) {
 		return TaskRepository.save(Task);
 	}
 	
 	// get Task by id rest api
-	@GetMapping("/Tasks/{id}")
+	@GetMapping(value = {"/Tasks/{id}", "/History/{id}"})
 	public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task doesn't exist with id :" + id));
@@ -50,7 +50,7 @@ public class TaskController {
 	
 	// update Task rest api
 	
-	@PutMapping("/Tasks/{id}")
+	@PutMapping(value = {"/Tasks/{id}", "/History/{id}"})
 	public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task TaskDetails){
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
@@ -66,7 +66,7 @@ public class TaskController {
 	}
 	
 	// delete Task rest api
-	@DeleteMapping("/Tasks/{id}")
+	@DeleteMapping(value = {"/Tasks/{id}", "/History/{id}"})
 	public ResponseEntity<Map<String, Boolean>> deleteTask(@PathVariable Long id){
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));

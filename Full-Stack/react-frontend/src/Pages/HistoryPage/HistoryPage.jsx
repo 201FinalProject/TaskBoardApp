@@ -17,9 +17,7 @@ export default class HistoryPage extends Component {
         <div style={{marginTop: "100px"}}>
             <p id="PHeader">History</p>
             <HistoryTask></HistoryTask>
-            <HistoryTask></HistoryTask>
-            <HistoryTask></HistoryTask>
-            <HistoryTask></HistoryTask>
+          
             
         </div>
     )};
