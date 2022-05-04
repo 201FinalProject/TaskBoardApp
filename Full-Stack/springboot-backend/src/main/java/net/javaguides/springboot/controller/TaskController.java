@@ -55,8 +55,8 @@ public class TaskController {
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
 		
-		Task.setTaskName(TaskDetails.getTaskNameName());
-		Task.setCompletedBy(TaskDetails.getCompletedByName());
+		Task.setTaskName(TaskDetails.getTaskName());
+		Task.setCompletedBy(TaskDetails.getCompletedBy());
 		Task.setDifficulty(TaskDetails.getDifficulty());
         Task.setCompletionDate(TaskDetails.getCompletionDate());
 		

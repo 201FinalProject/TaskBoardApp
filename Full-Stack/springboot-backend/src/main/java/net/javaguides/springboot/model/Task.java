@@ -33,7 +33,7 @@ public class Task {
 	
 	public Task(String taskName, String completedBy, double difficulty, String completionDate) {
 		super();
-		this.taskName = firstName;
+		this.taskName = taskName;
 		this.completedBy = completedBy;
 		this.difficulty = difficulty;
         this.completionDate = completionDate;
@@ -65,7 +65,7 @@ public class Task {
     }
 
     public String getCompletionDate() {
-        return completionDate
+        return completionDate;
     }
     public void setCompletionDate(String completionDate) {
         this.completionDate = completionDate;
