@@ -35,12 +35,6 @@ function TaskCreate(){
             </div>
             <div class="form-group row">
                 <label id="difficulty" for="difficulty-id">Difficulty: </label>
-                <label>
-
-
-
-                </label>
-                render(
                 <ReactStars
                     count={5}
                     onChange={ratingChanged}
@@ -50,8 +44,7 @@ function TaskCreate(){
                     halfIcon={<i className="fa fa-star-half-alt"></i>}
                     fullIcon={<i className="fa fa-star"></i>}
                     activeColor="#ffd700"
-                />,
-                );
+                />
                 <button type="button" class="delete">Delete Task</button>
             </div>
 
