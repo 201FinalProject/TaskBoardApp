@@ -1,7 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import CreateTask from './components/Task/CreateTaskComponent';
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import ListEmployeeComponent from './components/Employee/ListEmployeeComponent';
@@ -27,7 +26,6 @@ function App() {
             <Navbar />
                 <div className="container">
                     <Switch> 
-                          <Route path = "/TaskCreate" component = {CreateTask}></Route>
                           <Route path = "/" exact component = {HomePage}></Route>
                           <Route path = "/employees" component = {ListEmployeeComponent}></Route>
                           <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}></Route>

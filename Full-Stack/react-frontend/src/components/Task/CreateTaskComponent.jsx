@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TaskService from '../../services/TaskService';
+import './TaskCreate.css';
 
 class CreateTaskComponent extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class CreateTaskComponent extends Component {
             completedBy: '',
             difficulty: '',
             completionDate: '',
-            groupCode:''
+            groupCode:'',
+            description: ''
         }
         this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
         this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
@@ -32,8 +34,10 @@ class CreateTaskComponent extends Component {
                     completedBy: task.completedBy,
                     difficulty: task.difficulty,
                     completionDate: task.completionDate,
-                    groupCode: task.groupCode
+                    groupCode: task.groupCode,
+                    description: task.desc
                 });
+                this.deleteTask = this.deleteTask.bind(this);
             });
         }        
     }
@@ -54,6 +58,12 @@ class CreateTaskComponent extends Component {
         }
     }
     
+    deleteTask(id){
+        TaskService.deleteTask(id).then( res => {
+            this.setState({tasks: this.state.tasks.filter(task => task.id !== id)});
+        });
+    }
+
     changeTaskNameHandler= (event) => {
         this.setState({taskName: event.target.value});
     }
@@ -86,58 +96,43 @@ class CreateTaskComponent extends Component {
         }
     }
     render() {
-        return (
-            <div>
-                <br></br>
-                   <div className = "container">
-                        <div className = "row">
-                            <div className = "card col-md-6 offset-md-3 offset-md-3">
-                                {
-                                    this.getTitle()
-                                }
-                                <div className = "card-body">
-                                    <form>
-                                        <div className = "form-group">
-                                            <label> Task Name: </label>
-                                            <input placeholder="Task Name" name="taskName" className="form-control" 
-                                                value={this.state.taskName} onChange={this.changeTaskNameHandler}/>
-                                        </div>
-                                        <div className = "form-group">
-                                            <label> Completed By: </label>
-                                            <input placeholder="Completed By" name="completedBy" className="form-control" 
-                                                value={this.state.completedBy} onChange={this.changeCompletedByHandler}/>
-                                        </div>
-                                        <div className = "form-group">
-                                            <label> Difficulty: </label>
-                                            <input placeholder="Difficulty" name="difficulty" className="form-control" 
-                                                value={this.state.difficulty} onChange={this.changeDifficultyHandler}/>
-                                        </div>
+        return(
+            <div class = "main">
+                <form action="" method="">
+                <div className="form-group row">
+                    <label id="title" for="title-id">Title: </label>
+                    <input type="text" className="form-control" id="title-id" name="title" placeholder="Task Name" name="taskName" 
+                        value={this.state.taskName} onChange={this.changeTaskNameHandler}></input>
+                    <button type="button" className="cancel" onClick={this.cancel.bind(this)} >Cancel</button>
+                </div>
+                <div className="form-group row">
+                    <label id="member" for="member-id">Member: </label>
+                    <input type="text" className="form-control" id="member-id" name="member" placeholder="Completed By" 
+                        value={this.state.completedBy} onChange={this.changeCompletedByHandler}></input>
+                </div>
+                <div className="form-group row">
+                    <label id="dated" for="date-id">Due Date: </label>
+                    <input type="date" className="form-control" id="date-id" name="date" placeholder="Completion Date" 
+                         value={this.state.completionDate} onChange={this.changeCompletionDateHandler}></input>
+                </div>
+                <div className="form-group row">
+                    <label for="description-id">Description: </label>
+                </div>
+                <div className="form-group-row">
+                    <input type="text" className="form-control" id="description-id" name="description" placeholder="Add Description"></input>
+                </div>
+                <div className="form-group row">
+                    <label id="difficulty" for="difficulty-id">Difficulty: Stars? </label>
+                    <button type="button" onClick={ () => this.deleteTask(this.id)} className="delete">Delete Task</button>
+                    <button className = "save" onClick={this.saveOrUpdateTask}>Save</button>
+                </div>
+    
 
-                                        <div className = "form-group">
-                                            <label> Completion Date: </label>
-                                            <input placeholder="Completion Date" name="completionDate" className="form-control" 
-                                                value={this.state.completionDate} onChange={this.changeCompletionDateHandler}/>
-                                        </div>
-
-                                        <div className = "form-group">
-                                            <label> Group Code: </label>
-                                            <input placeholder="Group Code" name="groupCode" className="form-control" 
-                                                value={this.state.groupCode} onChange={this.changeGroupCodeHandler}/>
-                                        </div>
-
-                                    
-
-                                        <button className="btn btn-success" onClick={this.saveOrUpdateTask}>Save</button>
-                                        <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-
-                   </div>
+                </form>
             </div>
         )
     }
 }
 
-export default CreateTaskComponent
+export default CreateTaskComponent;
+

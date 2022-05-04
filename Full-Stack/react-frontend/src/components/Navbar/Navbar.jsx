@@ -21,7 +21,7 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link to="/taskcreate">
+          <Link to="/add-task/_add">
             Create Task
           </Link>
         </li>
