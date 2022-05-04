@@ -1,0 +1,54 @@
+#Main {
+    margin: auto;
+    width: 25%;
+    text-align: center;
+    font-size: 15px;
+}
+
+#FormContainer {
+    width: 100%;
+    margin-top: 600px;
+}
+
+#CreateGroup{
+    max-width: 500px;
+    width: 500px;
+    height: 5em;
+    font-size: 20px;
+    font-weight: bold;
+    caret-color: transparent;
+    background-color: transparent;
+}
+
+input[type="text"] { 
+    text-align: center;
+}
+
+#BottomRow {
+    max-width: 500px;
+    position:fixed;
+    width: 100%;
+}
+
+#JoinGroup {
+    width: 60%;
+    float: left;
+    height: 3em;
+    font-size: 20px;
+    margin-top: 0px;
+    font-weight: bold;
+    border: none;
+    caret-color: transparent;
+    background-color: transparent;
+}
+
+#Enter{
+    width: 39.20%;
+    float: right;
+    height: 3.1em;
+    font-size: 20px;
+    margin-top: 0px;
+    border-radius: 5px;
+    caret-color: transparent;
+    background-color: transparent;
+}
