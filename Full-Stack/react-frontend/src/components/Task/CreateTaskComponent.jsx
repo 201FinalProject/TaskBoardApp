@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import TaskService from '../services/TaskService';
+import TaskService from '../../services/TaskService';
 
-class UpdateTaskComponent extends Component {
+class CreateTaskComponent extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
+            // step 2
             id: this.props.match.params.id,
             taskName: '',
             completedBy: '',
@@ -15,29 +16,42 @@ class UpdateTaskComponent extends Component {
         }
         this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
         this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
-        this.updateTask = this.updateTask.bind(this);
+        this.saveOrUpdateTask = this.saveOrUpdateTask.bind(this);
     }
 
+    // step 3
     componentDidMount(){
-        TaskService.getTaskById(this.state.id).then( (res) =>{
-            let task = res.data;
-            this.setState({taskName: task.taskName,
-                completedBy: task.completedBy,
-                difficulty: task.difficulty,
-                completionDate: task.completionDate,
-                groupCode: task.groupCode
-            });
-        });
-    }
 
-    updateTask = (e) => {
+        // step 4
+        if(this.state.id === '_add'){
+            return
+        }else{
+            TaskService.getTaskById(this.state.id).then( (res) =>{
+                let task = res.data;
+                this.setState({taskName: task.taskName,
+                    completedBy: task.completedBy,
+                    difficulty: task.difficulty,
+                    completionDate: task.completionDate,
+                    groupCode: task.groupCode
+                });
+            });
+        }        
+    }
+    saveOrUpdateTask = (e) => {
         e.preventDefault();
         let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, difficulty: this.state.difficulty, completionDate: this.state.completionDate, groupCode: this.state.groupCode};
         console.log('task => ' + JSON.stringify(task));
-        console.log('id => ' + JSON.stringify(this.state.id));
-        TaskService.updateTask(task, this.state.id).then( res => {
-            this.props.history.push('/tasks');
-        });
+
+        // step 5
+        if(this.state.id === '_add'){
+            TaskService.createTask(task).then(res =>{
+                this.props.history.push('/tasks');
+            });
+        }else{
+            TaskService.updateTask(task, this.state.id).then( res => {
+                this.props.history.push('/tasks');
+            });
+        }
     }
     
     changeTaskNameHandler= (event) => {
@@ -64,6 +78,13 @@ class UpdateTaskComponent extends Component {
         this.props.history.push('/tasks');
     }
 
+    getTitle(){
+        if(this.state.id === '_add'){
+            return <h3 className="text-center">Add Task</h3>
+        }else{
+            return <h3 className="text-center">Update Task</h3>
+        }
+    }
     render() {
         return (
             <div>
@@ -71,10 +92,12 @@ class UpdateTaskComponent extends Component {
                    <div className = "container">
                         <div className = "row">
                             <div className = "card col-md-6 offset-md-3 offset-md-3">
-                                <h3 className="text-center">Update Task</h3>
+                                {
+                                    this.getTitle()
+                                }
                                 <div className = "card-body">
                                     <form>
-                                    <div className = "form-group">
+                                        <div className = "form-group">
                                             <label> Task Name: </label>
                                             <input placeholder="Task Name" name="taskName" className="form-control" 
                                                 value={this.state.taskName} onChange={this.changeTaskNameHandler}/>
@@ -102,7 +125,9 @@ class UpdateTaskComponent extends Component {
                                                 value={this.state.groupCode} onChange={this.changeGroupCodeHandler}/>
                                         </div>
 
-                                        <button className="btn btn-success" onClick={this.updateTask}>Save</button>
+                                    
+
+                                        <button className="btn btn-success" onClick={this.saveOrUpdateTask}>Save</button>
                                         <button className="btn btn-danger" onClick={this.cancel.bind(this)} style={{marginLeft: "10px"}}>Cancel</button>
                                     </form>
                                 </div>
@@ -115,4 +140,4 @@ class UpdateTaskComponent extends Component {
     }
 }
 
-export default UpdateTaskComponent
+export default CreateTaskComponent

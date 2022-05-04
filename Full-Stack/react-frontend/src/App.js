@@ -1,22 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CreateTask from './components/Task/CreateTaskComponent';
 import Navbar from './components/Navbar/Navbar';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
-import ListEmployeeComponent from './components/Employee Stuff/ListEmployeeComponent';
+import ListEmployeeComponent from './components/Employee/ListEmployeeComponent';
 import FooterComponent from './components/FooterComponent';
-import CreateEmployeeComponent from './components/Employee Stuff/CreateEmployeeComponent';
-import UpdateEmployeeComponent from './components/Employee Stuff/UpdateEmployeeComponent';
-import Login from './components/Login/Login';
-import ViewEmployeeComponent from './components/Employee Stuff/ViewEmployeeComponent';
-import ListTaskComponent from './components/ListTaskComponent.jsx';
-import CreateTaskComponent from './components/CreateTaskComponent.jsx';
-import ViewTaskComponent from './components/ViewTaskComponent.jsx';
-import Register from './components/Register/Register';
-import HomePage from './Pages/Home/HomePage';
-import ListUserComponent from './components/ListUserComponent.jsx';
-import CreateUserComponent from './components/CreateUserComponent.jsx';
-import ViewUserComponent from './components/ViewUserComponent.jsx';
+import CreateEmployeeComponent from './components/Employee/CreateEmployeeComponent';
+import UpdateEmployeeComponent from './components/Employee/UpdateEmployeeComponent';
+import Login from './Pages/Login/Login';
+import HistoryPage from './Pages/HistoryPage/HistoryPage';
+import ViewEmployeeComponent from './components/Employee/ViewEmployeeComponent';
+import ListTaskComponent from './components/Task/ListTaskComponent.jsx';
+import CreateTaskComponent from './components/Task/CreateTaskComponent.jsx';
+import ViewTaskComponent from './components/Task/ViewTaskComponent.jsx';
+import Register from './Pages/Register/Register';
+import HomePage from './Pages/HomePage/HomePage';
+import ListUserComponent from './components/User/ListUserComponent.jsx';
+import CreateUserComponent from './components/User/CreateUserComponent.jsx';
+import ViewUserComponent from './components/User/ViewUserComponent.jsx';
 
 function App() {
   return (
@@ -25,11 +27,13 @@ function App() {
             <Navbar />
                 <div className="container">
                     <Switch> 
+                          <Route path = "/TaskCreate" component = {CreateTask}></Route>
                           <Route path = "/" exact component = {HomePage}></Route>
                           <Route path = "/employees" component = {ListEmployeeComponent}></Route>
                           <Route path = "/add-employee/:id" component = {CreateEmployeeComponent}></Route>
                           <Route path = "/view-employee/:id" component = {ViewEmployeeComponent}></Route>
                           <Route path="/Login" component ={Login} ></Route>
+                          <Route path="/History" component ={HistoryPage} ></Route>
                           <Route path = "/" exact component = {ListTaskComponent}></Route>
                           <Route path = "/tasks" component = {ListTaskComponent}></Route>
                           <Route path = "/add-task/:id" component = {CreateTaskComponent}></Route>

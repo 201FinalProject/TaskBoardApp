@@ -1,9 +1,23 @@
 {
-  "name": "react-frontend",
+  "name": "react-201",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "@fontsource/dm-sans": "^4.5.7",
+    "@fontsource/sora": "^4.5.5",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.1.1",
+    "@testing-library/user-event": "^13.5.0",
+    "react": "^18.0.0",
+    "react-bootstrap": "^2.3.0",
+    "react-dom": "^18.0.0",
+    "react-icons": "^4.3.1",
+    "react-rating-stars-component": "^2.2.0",
+    "react-redux": "^7.2.0",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.0.2",
+    "react-scripts": "5.0.1",
+    "react-scroll": "^1.8.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
@@ -22,7 +36,10 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [

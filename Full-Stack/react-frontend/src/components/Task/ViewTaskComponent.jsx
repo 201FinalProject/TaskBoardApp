@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TaskService from '../services/TaskService'
+import TaskService from '../../services/TaskService'
 
 class ViewTaskComponent extends Component {
     constructor(props) {
