@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom';
 import { Component } from "react";
 import "@fontsource/dm-sans";
 import "@fontsource/sora";
+import HistoryService from '../../services/HistoryService'
 
 
 
@@ -12,51 +13,20 @@ import "@fontsource/sora";
 export default class HistoryTask extends Component {
     constructor(props) {
       super(props);
-      this.onChangeMember = this.onChangeMember.bind(this);
-      this.onChangeDifficulty = this.onChangeDifficulty.bind(this);
-      this.onChangeDate = this.onChangeDate.bind(this);
-  
+    
       this.state = {
-        member: null,
-        difficulty: null,
-        date: null
+        tasks:[]
       };
     }
-  
-    onChangeMember(e) {
-      this.setState({
-        member: e.target.value
-      });
-    }
-  
-    onChangeDifficulty(e) {
-      this.setState({
-        difficulty: e.target.value
-      });
-    }
 
-    onChangeDate(e) {
-        this.setState({
-          date: e.target.value
-        });
-    }
+  componentDidMount(){
+    HistoryService.getTasks().then((res) => {
+        this.setState({ tasks: res.data});
+    });
+  }
   
-    
-  
-    //   LoginDataService.create(data) 
-    //     .then(response => {
-    //       this.setState({
-    //         email: response.data.email,
-    //         password: response.data.password,
-    //         groupCode: response.data.groupCode,
-    //       });
-    //       console.log(response.data);
-    //     })
-    //     .catch(e => {
-    //       console.log(e);
-    //     });
-    
-  
+
+  /*
     newHistoryPage() {
       this.setState({
         member: "",
@@ -64,7 +34,7 @@ export default class HistoryTask extends Component {
         date: ""
       });
     }
-  
+  */
     render() {
         return (
             <h1>
@@ -73,7 +43,7 @@ export default class HistoryTask extends Component {
                 <div class = "Line1"></div>
                 <ul class = "Completed">
                     <li class = "CompletedBy1">Completed By: </li>
-                    <li class = "CompletedBy2">MemberName</li>
+                    <li class = "CompletedBy2">Task Name</li>
                 </ul>
                 <ul class = "Difficulty">
                     <li class = "Difficulty1">Difficulty: </li>
@@ -90,7 +60,42 @@ export default class HistoryTask extends Component {
                 <option value = "Difficulty">Difficulty</option>
                 <option value = "CompletionDate">Completion Date</option>
             </select>
+
+            <div className = "row">
+                        <table className = "table table-striped table-bordered">
+
+                            <thead>
+                                <tr>
+                                    <th> Task Name</th>
+                                    <th> Task Completed By</th>
+                                    <th> Task Difficulty</th>
+                                    <th> Task Completion Date</th>
+                                    <th> Task Group Code </th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {
+                                    this.state.tasks.map(
+                                        task => 
+                                        <tr key = {task.id}>
+                                             <td> { task.taskName} </td>   
+                                             <td> {task.completedBy}</td>
+                                             <td> {task.difficulty}</td>
+                                             <td> {task.completionDate}</td>
+                                             <td> {task.groupCode}</td>
+                                             
+                                        </tr>
+                                    )
+                                }
+                            </tbody>
+                        </table>
+
+                 </div>
+
             </h1>
+
+            
         )};
     }
 
