@@ -50,6 +50,7 @@ class ListTaskComponent extends Component {
                                 <tr>
                                     <th> Task Name</th>
                                     <th> Task Completed By</th>
+                                    <th> Task Description</th>
                                     <th> Task Difficulty</th>
                                     <th> Task Completion Date</th>
                                     <th> Task Group Code </th>
@@ -61,8 +62,9 @@ class ListTaskComponent extends Component {
                                     this.state.tasks.map(
                                         task => 
                                         <tr key = {task.id}>
-                                             <td> { task.taskName} </td>   
+                                             <td> {task.taskName} </td>   
                                              <td> {task.completedBy}</td>
+                                             <td> {task.description}</td>
                                              <td> {task.difficulty}</td>
                                              <td> {task.completionDate}</td>
                                              <td> {task.groupCode}</td>

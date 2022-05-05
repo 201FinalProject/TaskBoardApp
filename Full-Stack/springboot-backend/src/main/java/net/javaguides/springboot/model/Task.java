@@ -21,6 +21,9 @@ public class Task {
 	@Column(name = "completedBy")
 	private String completedBy;
 	
+	@Column(name = "description")
+	private String description;
+	
 	@Column(name = "difficulty")
 	private double difficulty;
 
@@ -30,17 +33,21 @@ public class Task {
     @Column(name = "groupCode")
 	private String groupCode;
 	
+    //constructors
 	public Task() {
 		
 	}
 	
-	public Task(String taskName, String completedBy, double difficulty, String completionDate) {
+	public Task(String taskName, String completedBy, String description, double difficulty, String completionDate, String groupCode) {
 		super();
 		this.taskName = taskName;
 		this.completedBy = completedBy;
+		this.description = description;
 		this.difficulty = difficulty;
         this.completionDate = completionDate;
+        this.groupCode = groupCode;
 	}
+	
 	public long getId() {
 		return id;
 	}
@@ -58,6 +65,13 @@ public class Task {
 	}
 	public void setCompletedBy(String completedBy) {
 		this.completedBy = completedBy;
+	}
+	
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	
     public double getDifficulty() {

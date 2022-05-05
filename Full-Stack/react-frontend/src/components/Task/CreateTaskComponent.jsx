@@ -11,10 +11,10 @@ class CreateTaskComponent extends Component {
             id: this.props.match.params.id,
             taskName: '',
             completedBy: '',
+            description: '',
             difficulty: '',
             completionDate: '',
-            groupCode:'',
-            description: ''
+            groupCode:''
         }
         this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
         this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
@@ -30,12 +30,13 @@ class CreateTaskComponent extends Component {
         }else{
             TaskService.getTaskById(this.state.id).then( (res) =>{
                 let task = res.data;
-                this.setState({taskName: task.taskName,
+                this.setState({
+                    taskName: task.taskName,
                     completedBy: task.completedBy,
+                    description: task.description,
                     difficulty: task.difficulty,
                     completionDate: task.completionDate,
-                    groupCode: task.groupCode,
-                    description: task.desc
+                    groupCode: task.groupCode
                 });
                 this.deleteTask = this.deleteTask.bind(this);
             });
@@ -43,7 +44,7 @@ class CreateTaskComponent extends Component {
     }
     saveOrUpdateTask = (e) => {
         e.preventDefault();
-        let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, difficulty: this.state.difficulty, completionDate: this.state.completionDate, groupCode: this.state.groupCode};
+        let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, description: this.state.description, difficulty: this.state.difficulty, completionDate: this.state.completionDate, groupCode: this.state.groupCode};
         console.log('task => ' + JSON.stringify(task));
 
         // step 5
@@ -70,6 +71,10 @@ class CreateTaskComponent extends Component {
 
     changeCompletedByHandler= (event) => {
         this.setState({completedBy: event.target.value});
+    }
+
+    changeDescriptionHandler= (event) => {
+        this.setState({description: event.target.value});
     }
 
     changeDifficultyHandler= (event) => {
@@ -119,7 +124,8 @@ class CreateTaskComponent extends Component {
                     <label for="description-id">Description: </label>
                 </div>
                 <div className="form-group-row">
-                    <input type="text" className="form-control" id="description-id" name="description" placeholder="Add Description"></input>
+                    <input type="text" className="form-control" id="description-id" name="description" placeholder="Add Description"
+                     value={this.state.description} onChange={this.changeDescriptionHandler}></input>
                 </div>
                 <div className="form-group row">
                     <label id="difficulty" for="difficulty-id">Difficulty: Stars? </label>

@@ -33,12 +33,12 @@ class ViewTaskComponent extends Component {
                             <div> { this.state.task.completedBy}</div>
                         </div>
                         <div className = "row">
-                            <label> Task Difficulty: </label>
-                            <div> { this.state.task.difficulty }</div>
-                        </div>
-                        <div className = "row">
                             <label> Description: </label>
                             <div> { this.state.task.description }</div>
+                        </div>
+                        <div className = "row">
+                            <label> Task Difficulty: </label>
+                            <div> { this.state.task.difficulty }</div>
                         </div>
                         <div className = "row">
                             <label> Task Completion Date: </label>

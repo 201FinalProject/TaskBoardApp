@@ -9,6 +9,7 @@ class UpdateTaskComponent extends Component {
             id: this.props.match.params.id,
             taskName: '',
             completedBy: '',
+            description: '',
             difficulty: '',
             completionDate: '',
             groupCode:''
@@ -21,8 +22,10 @@ class UpdateTaskComponent extends Component {
     componentDidMount(){
         TaskService.getTaskById(this.state.id).then( (res) =>{
             let task = res.data;
-            this.setState({taskName: task.taskName,
+            this.setState({
+                taskName: task.taskName,
                 completedBy: task.completedBy,
+                description: task.description,
                 difficulty: task.difficulty,
                 completionDate: task.completionDate,
                 groupCode: task.groupCode
@@ -32,7 +35,7 @@ class UpdateTaskComponent extends Component {
 
     updateTask = (e) => {
         e.preventDefault();
-        let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, difficulty: this.state.difficulty, completionDate: this.state.completionDate, groupCode: this.state.groupCode};
+        let task = {taskName: this.state.taskName, completedBy: this.state.completedBy, description: this.state.description, difficulty: this.state.difficulty, completionDate: this.state.completionDate, groupCode: this.state.groupCode};
         console.log('task => ' + JSON.stringify(task));
         console.log('id => ' + JSON.stringify(this.state.id));
         TaskService.updateTask(task, this.state.id).then( res => {
@@ -46,6 +49,10 @@ class UpdateTaskComponent extends Component {
 
     changeCompletedByHandler= (event) => {
         this.setState({completedBy: event.target.value});
+    }
+
+    changeDescriptionHandler= (event) => {
+        this.setState({description: event.target.value});
     }
 
     changeDifficultyHandler= (event) => {
@@ -84,6 +91,12 @@ class UpdateTaskComponent extends Component {
                                             <input placeholder="Completed By" name="completedBy" className="form-control" 
                                                 value={this.state.completedBy} onChange={this.changeCompletedByHandler}/>
                                         </div>
+                                        <div className = "form-group">
+                                            <label> Description: </label>
+                                            <input placeholder="Description" name="description" className="form-control" 
+                                                value={this.state.description} onChange={this.changeDescriptionHandler}/>
+                                        </div>
+
                                         <div className = "form-group">
                                             <label> Difficulty: </label>
                                             <input placeholder="Difficulty" name="difficulty" className="form-control" 

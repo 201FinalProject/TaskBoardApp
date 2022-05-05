@@ -57,6 +57,10 @@ public class TaskController {
 		
 		Task.setTaskName(TaskDetails.getTaskName());
 		Task.setCompletedBy(TaskDetails.getCompletedBy());
+		Task.setDescription(TaskDetails.getDescription());
+		System.out.println(TaskDetails.getDescription());
+		System.out.println("TaskDetails()");
+
 		Task.setDifficulty(TaskDetails.getDifficulty());
         Task.setCompletionDate(TaskDetails.getCompletionDate());
         Task.setGroupCode(TaskDetails.getGroupCode());
