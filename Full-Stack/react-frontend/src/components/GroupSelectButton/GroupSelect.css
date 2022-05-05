@@ -13,12 +13,13 @@
 }
 
 #GHGroupName {
-  
+    
     left: 1.18%;
     right: 82.99%;
     top: 26.47%;
     bottom: 26.47%;
     margin-left: 10px;
+    margin-top: 15px;
 
     font-family: 'Sora';
     font-style: normal;
