@@ -3,6 +3,8 @@ import GroupSelect from "../../components/GroupSelectButton/GroupSelect";
 import PageHeader from "../../components/PageHeader/PageHeader";
 import './HomePage.css';
 import "@fontsource/sora";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function HomePage(){
     return(
@@ -21,8 +23,8 @@ function HomePage(){
                 </div>
                 <div id="buttonDiv">
                     <button type="button" id="GroupButton" onClick={event =>  window.location.href='/add-group/_add'}>
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                        Create/Join Group
+                    <FontAwesomeIcon icon={faPlus} />
+                    &nbsp;   Create/Join Group
                     </button>
                 </div>
                 <hr id="divider" style={{clear: "both"}}></hr>
