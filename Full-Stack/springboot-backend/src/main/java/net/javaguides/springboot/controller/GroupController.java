@@ -29,19 +29,20 @@ public class GroupController {
 	private GroupRepository GroupRepository;
 	
 	// get all Groups
-	@GetMapping("/Groups")
+	
+	@GetMapping(value = {"/Groups", "/Login"})
 	public List<Group> getAllGroups(){
 		return GroupRepository.findAll();
 	}		
 	
 	// create Group rest api
-	@PostMapping("/Groups")
+	@PostMapping(value = {"/Groups", "/Login"})
 	public Group createGroup(@RequestBody Group Group) {
 		return GroupRepository.save(Group);
 	}
 	
 	// get Group by id rest api
-	@GetMapping("/Groups/{id}")
+	@GetMapping(value = {"/Groups/{id}", "/Login/{id}"})
 	public ResponseEntity<Group> getGroupById(@PathVariable Long id) {
 		Group Group = GroupRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Group doesn't exist with id :" + id));
@@ -50,7 +51,7 @@ public class GroupController {
 	
 	// update Group rest api
 	
-	@PutMapping("/Groups/{id}")
+	@PutMapping(value = {"/Groups/{id}", "/Login/{id}"})
 	public ResponseEntity<Group> updateGroup(@PathVariable Long id, @RequestBody Group GroupDetails){
 		Group Group = GroupRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Group not exist with id :" + id));
@@ -63,7 +64,7 @@ public class GroupController {
 	}
 	
 	// delete Group rest api
-	@DeleteMapping("/Groups/{id}")
+	@DeleteMapping(value = {"/Groups/{id}", "/Login/{id}"})
 	public ResponseEntity<Map<String, Boolean>> deleteGroup(@PathVariable Long id){
 		Group Group = GroupRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Group not exist with id :" + id));

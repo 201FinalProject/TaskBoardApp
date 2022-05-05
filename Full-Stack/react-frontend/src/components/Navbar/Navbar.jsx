@@ -25,6 +25,11 @@ function Navbar() {
             Create Task
           </Link>
         </li>
+        <li>
+          <Link to="/add-group/_add">
+            Create/Join Group
+          </Link>
+        </li>
       </ul>
       </nav>
     );

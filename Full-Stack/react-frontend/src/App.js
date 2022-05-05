@@ -19,6 +19,10 @@ import ListUserComponent from './components/User/ListUserComponent.jsx';
 import CreateUserComponent from './components/User/CreateUserComponent.jsx';
 import ViewUserComponent from './components/User/ViewUserComponent.jsx';
 
+import ListGroupComponent from './components/Group/ListGroupComponent.jsx';
+import CreateGroupComponent from './components/Group/CreateGroupComponent.jsx';
+import ViewGroupComponent from './components/Group/ViewGroupComponent.jsx';
+
 function App() {
   return (
     <div>
@@ -41,6 +45,11 @@ function App() {
                           <Route path = "/users" component = {ListUserComponent}></Route>
                           <Route path = "/add-user/:id" component = {CreateUserComponent}></Route>
                           <Route path = "/view-user/:id" component = {ViewUserComponent}></Route>
+
+                          <Route path = "/" exact component = {ListGroupComponent}></Route>
+                          <Route path = "/groups" component = {ListGroupComponent}></Route>
+                          <Route path = "/add-group/:id" component = {CreateGroupComponent}></Route>
+                          <Route path = "/view-group/:id" component = {ViewGroupComponent}></Route>
                           {/* <Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route> */}
                     </Switch>
                 </div>

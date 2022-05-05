@@ -6,6 +6,7 @@ import {render} from 'react-dom';
 import "@fontsource/dm-sans";
 import PageHeader from "../../components/PageHeader/PageHeader.jsx";
 import background from "../../LongBackground.png";
+import GuestLoginService from '../../services/GuestLoginService';
 
 
 const useStyles = {
@@ -124,9 +125,24 @@ export default class loginPage extends Component {
         email: null,
         password: null,
         groupCode: null,
-        error: false
       };
     }
+
+    componentDidMount(){
+
+      // step 4
+      //if(this.state.id === '_add'){
+        //  return
+      //}else{
+        GuestLoginService.getGroupById(this.state.id).then( (res) =>{
+          let group = res.data;
+          this.setState({userID: group.userID,
+              groupCode: group.groupCode,
+
+          });
+      });
+      //}        
+  }
   
     onChangeEmail(e) {
       this.setState({
@@ -145,13 +161,29 @@ export default class loginPage extends Component {
           groupCode: e.target.value
         });
     }
+
+    changeGroupIDHandler= (event) => {
+      this.setState({groupCode: event.target.value});
+  }
+
+  saveOrUpdateGroup = (e) => {
+    e.preventDefault();
+    let group = {userID: this.state.userID, groupCode: this.state.groupCode};
+    console.log('group => ' + JSON.stringify(group));
+
+    // step 5
+        GuestLoginService.updateGroup(group, this.state.id).then( res => {
+            this.props.history.push('/Login');
+        });
+    
+}
   
-    saveLogin() {
+    /*saveLogin() {
       var data = {
         email: this.state.email,
         password: this.state.password,
         groupCode: this.state.groupCode
-    };
+    }; 
   
     //   LoginDataService.create(data) 
     //     .then(response => {
@@ -165,9 +197,9 @@ export default class loginPage extends Component {
     //     .catch(e => {
     //       console.log(e);
     //     });
-    }
+    }*/
   
-    newLoginPage() {
+    /*newLoginPage() {
       this.setState({
         email: "",
         password: "",
@@ -175,7 +207,7 @@ export default class loginPage extends Component {
         error: false
       });
     }
-  
+  */
     render() {
         return(
             <div style={useStyles.MainDivision}>
@@ -186,15 +218,18 @@ export default class loginPage extends Component {
                     <input style={useStyles.Boxes} type="email" placeholder="Email" /> <br></br>
                     <input style={useStyles.Boxes} type="password" placeholder="Password" /> <br></br>
                     <form>
-                      <div class="container">
-                          <div class="vertical-center">
+                      <div className="container">
+                          <div className="vertical-center">
                               <button style={useStyles.loginButton} type="submit" name="Register">Login</button>
                           </div>
                       </div>
                     </form>
                     <h3 style={useStyles.InnerGuestLogin}>Guest Login</h3>
-                    <input style={useStyles.Boxes} placeholder="Group Code" /> <br></br>
+                    
                     <form>
+                    <input style={useStyles.Boxes} placeholder="Group Code"
+                    value={this.state.groupCode} onChange={this.changeGroupIDHandler}/> <br></br>
+                    <button className="btn btn-success" onClick={this.saveOrUpdateGroup}>Save</button>
                       <div style={useStyles.guestContainer}>
                           <div style={useStyles.guestVerticalCenter}>
                               <button style={useStyles.guestLoginButton} type="submit" name="Register">Guest Login</button>
