@@ -20,7 +20,7 @@ function HomePage(){
                     <h2 id="dividerHeader">Groups</h2>
                 </div>
                 <div id="buttonDiv">
-                    <button type="button" id="GroupButton">
+                    <button type="button" id="GroupButton" onClick={event =>  window.location.href='/add-group/_add'}>
                         <i class="fa fa-plus" aria-hidden="true"></i>
                         Create/Join Group
                     </button>

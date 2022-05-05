@@ -45,7 +45,6 @@ function App() {
                           <Route path = "/users" component = {ListUserComponent}></Route>
                           <Route path = "/add-user/:id" component = {CreateUserComponent}></Route>
                           <Route path = "/view-user/:id" component = {ViewUserComponent}></Route>
-
                           <Route path = "/" exact component = {ListGroupComponent}></Route>
                           <Route path = "/groups" component = {ListGroupComponent}></Route>
                           <Route path = "/add-group/:id" component = {CreateGroupComponent}></Route>
