@@ -10,6 +10,12 @@ function Navbar() {
       </Link>
       <ul>
         <li>
+          <Link to="/" className="home-button">
+            Home
+          </Link>
+          
+        </li>
+        <li>
           <Link to="/login" className="login-button">
             Login
           </Link>

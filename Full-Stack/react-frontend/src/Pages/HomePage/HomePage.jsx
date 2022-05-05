@@ -12,7 +12,7 @@ function HomePage(){
                 <div id="headerDiv">
                     <h2 id="dividerHeader">My Tasks</h2>
                 </div>
-                <hr id="divider"></hr>
+                <hr id="divider" style={{clear: "both"}}></hr>   
             </div>
             <h2 id="temp">INSERT CALENDAR</h2>
             <div id="mainDiv">
@@ -25,7 +25,7 @@ function HomePage(){
                         Create/Join Group
                     </button>
                 </div>
-                <hr id="divider"></hr>
+                <hr id="divider" style={{clear: "both"}}></hr>
             </div>
             
             <GroupSelect></GroupSelect>

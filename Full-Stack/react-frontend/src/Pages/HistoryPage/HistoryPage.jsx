@@ -1,13 +1,15 @@
 import React from "react";
 import HistoryTask from "../../components/HistoryTask/HistoryTask";
+import PageHeader from "../../components/PageHeader/PageHeader";
 import { Component } from "react";
 import background from "../../LongBackground.png";
+import { Redirect } from "react-router";
 
 const useStyles = {
     MainDivision: {
-      backgroundImage: `url(${background}`,
-      backgroundSize: "cover",
-      marginTop: "100px"
+      // backgroundImage: `url(${background}`,
+      // backgroundSize: "cover",
+      
     }
 }
 
@@ -23,10 +25,13 @@ export default class HistoryPage extends Component {
     render() {
       return(
         <div style={useStyles.MainDivision}>
-            <p id="PHeader">History</p>
-            <HistoryTask></HistoryTask>
-          
+          <div>
+            <PageHeader name="History"></PageHeader>
+          </div>
             
+            <HistoryTask></HistoryTask>
+            <HistoryTask></HistoryTask>
+            <HistoryTask></HistoryTask>
         </div>
     )};
 }

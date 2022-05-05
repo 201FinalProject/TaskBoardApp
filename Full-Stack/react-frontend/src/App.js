@@ -25,10 +25,10 @@ import ViewGroupComponent from './components/Group/ViewGroupComponent.jsx';
 
 function App() {
   return (
-    <div>
+    <div id="BIGDIV">
         <Router>
             <Navbar />
-                <div className="container">
+                <div>
                     <Switch> 
                           <Route path = "/" exact component = {HomePage}></Route>
                           <Route path = "/employees" component = {ListEmployeeComponent}></Route>
