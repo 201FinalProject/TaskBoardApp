@@ -7,6 +7,7 @@ import "@fontsource/dm-sans";
 import PageHeader from "../../components/PageHeader/PageHeader.jsx";
 import background from "../../LongBackground.png";
 import GuestLoginService from '../../services/GuestLoginService';
+import GroupService from '../../services/GroupService';
 
 
 const useStyles = {
@@ -115,69 +116,57 @@ const useStyles = {
 
 
 export default class loginPage extends Component {
-    constructor(props) {
-      super(props);
-      this.onChangeEmail = this.onChangeEmail.bind(this);
-      this.onChangePassword = this.onChangePassword.bind(this);
-      this.onChangeGroupCode = this.onChangeGroupCode.bind(this);
-  
-      this.state = {
-        email: null,
-        password: null,
-        groupCode: null,
-      };
+  constructor(props) {
+    super(props)
+
+    this.state = {
+        // step 2
+        id: this.props.match.params.id,
+        userID: '',
+        groupCode: '',
     }
+    this.changeUserIDHandler = this.changeUserIDHandler.bind(this);
+    this.changeGroupIDHandler = this.changeGroupIDHandler.bind(this);
+    this.saveOrUpdateGroup = this.saveOrUpdateGroup.bind(this);
+}
 
-    componentDidMount(){
+// step 3
+componentDidMount(){
 
-      // step 4
-      //if(this.state.id === '_add'){
-        //  return
-      //}else{
+    // step 4
+    
+  
         GuestLoginService.getGroupById(this.state.id).then( (res) =>{
-          let group = res.data;
-          this.setState({userID: group.userID,
-              groupCode: group.groupCode,
+            let group = res.data;
+            this.setState({userID: group.userID,
+                groupCode: group.groupCode,
 
-          });
-      });
-      //}        
-  }
-  
-    onChangeEmail(e) {
-      this.setState({
-        email: e.target.value
-      });
-    }
-  
-    onChangePassword(e) {
-      this.setState({
-        password: e.target.value
-      });
-    }
-
-    onChangeGroupCode(e) {
-        this.setState({
-          groupCode: e.target.value
+            });
         });
-    }
-
-    changeGroupIDHandler= (event) => {
-      this.setState({groupCode: event.target.value});
-  }
-
-  saveOrUpdateGroup = (e) => {
+           
+}
+saveOrUpdateGroup = (e) => {
     e.preventDefault();
-    let group = {userID: this.state.userID, groupCode: this.state.groupCode};
+    let group = {userID: "guest", groupCode: this.state.groupCode};
     console.log('group => ' + JSON.stringify(group));
 
     // step 5
-        GuestLoginService.updateGroup(group, this.state.id).then( res => {
-            this.props.history.push('/Login');
-        });
     
+        GuestLoginService.createGroup(group).then( res => {
+            this.props.history.push('/login');
+        });
+    }
+
+
+changeUserIDHandler= (event) => {
+    this.setState({userID: event.target.value});
 }
-  
+
+changeGroupIDHandler= (event) => {
+    this.setState({groupCode: event.target.value});
+}
+
+
     /*saveLogin() {
       var data = {
         email: this.state.email,
@@ -229,10 +218,9 @@ export default class loginPage extends Component {
                     <form>
                     <input style={useStyles.Boxes} placeholder="Group Code"
                     value={this.state.groupCode} onChange={this.changeGroupIDHandler}/> <br></br>
-                    <button className="btn btn-success" onClick={this.saveOrUpdateGroup}>Save</button>
                       <div style={useStyles.guestContainer}>
                           <div style={useStyles.guestVerticalCenter}>
-                              <button style={useStyles.guestLoginButton} type="submit" name="Register">Guest Login</button>
+                              <button style={useStyles.guestLoginButton} type="submit" name="Register" onClick={this.saveOrUpdateGroup}>Guest Login</button>
                           </div>
                       </div>
                       </form>
