@@ -40,11 +40,11 @@ class CreateGroupComponent extends Component {
         // step 5
         if(this.state.id === '_add'){
             GroupService.createGroup(group).then(res =>{
-                this.props.history.push('/groups');
+                this.props.history.push('/');
             });
         }else{
             GroupService.updateGroup(group, this.state.id).then( res => {
-                this.props.history.push('/groups');
+                this.props.history.push('/');
             });
         }
     }
