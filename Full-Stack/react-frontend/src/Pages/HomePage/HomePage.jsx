@@ -18,7 +18,7 @@ function HomePage(){
                 </div>
                 <hr id="divider" style={{clear: "both"}}></hr>   
             </div>
-            <h2 id="temp"></h2>
+            <h2 style={{height: "30px"}}></h2>
             <ListTaskComponent />
             <h2 id="temp"></h2>
             <div id="mainDiv">

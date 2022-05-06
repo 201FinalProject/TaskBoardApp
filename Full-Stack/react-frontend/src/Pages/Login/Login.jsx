@@ -13,8 +13,8 @@ import GroupService from '../../services/GroupService';
 const useStyles = {
   MainDivision: {
     width: "100%",
-    // backgroundImage: `url(${background}`,
-    // backgroundSize: "cover",
+    backgroundImage: `url(${background}`,
+    backgroundSize: "cover",
     height: "1024px"
   },
 
@@ -152,10 +152,10 @@ saveOrUpdateGroup = (e) => {
 
     // step 5
     
-    GuestLoginService.createGroup(group).then( res => {
-        this.props.history.push('/login');
-    });
-}
+        GuestLoginService.createGroup(group).then( res => {
+          this.props.history.push('/');
+        });
+    }
 
 
 changeUserIDHandler= (event) => {
@@ -209,7 +209,7 @@ changeGroupIDHandler= (event) => {
                     <form>
                       <div className="container">
                           <div className="vertical-center">
-                              <button style={useStyles.loginButton} type="submit" name="Register">Login</button>
+                              <button style={useStyles.loginButton} type="submit" name="Register" onClick={this.saveOrUpdateGroup}>Login</button>
                           </div>
                       </div>
                     </form>
@@ -220,7 +220,7 @@ changeGroupIDHandler= (event) => {
                     value={this.state.groupCode} onChange={this.changeGroupIDHandler}/> <br></br>
                       <div style={useStyles.guestContainer}>
                           <div style={useStyles.guestVerticalCenter}>
-                              <button style={useStyles.guestLoginButton} type="submit" name="Register" onClick={event =>  window.location.href='/'} >Guest Login</button>
+                              <button style={useStyles.guestLoginButton} type="submit" name="Register" onClick={this.saveOrUpdateGroup}>Guest Login</button>
                           </div>
                       </div>
                       </form>

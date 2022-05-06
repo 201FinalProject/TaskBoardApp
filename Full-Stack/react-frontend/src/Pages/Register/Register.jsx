@@ -48,7 +48,7 @@ export default class RegisterPage extends Component {
         console.log('user => ' + JSON.stringify(user));
 
         RegisterService.createUser(user).then(res =>{
-            this.props.history.push('/Register');
+            this.props.history.push('/');
         });
         /* // step 5
         if(this.state.id === '_add'){
