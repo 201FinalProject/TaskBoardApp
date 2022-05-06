@@ -38,7 +38,7 @@ function Navbar() {
           </Link>
         </li>
         <li>
-          <Link to="/Chat">Global Chat</Link>
+          <Link to="/Chat" target="_blank">Global Chat</Link>
         </li>
       </ul>
       </nav>
