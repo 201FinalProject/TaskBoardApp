@@ -5,6 +5,8 @@ import './HomePage.css';
 import "@fontsource/sora";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import ListTaskComponent from '../../components/Task/ListTaskComponent.jsx';
+
 
 function HomePage(){
     return(
@@ -16,7 +18,9 @@ function HomePage(){
                 </div>
                 <hr id="divider" style={{clear: "both"}}></hr>   
             </div>
-            <h2 id="temp">INSERT CALENDAR</h2>
+            <h2 id="temp"></h2>
+            <ListTaskComponent />
+            <h2 id="temp"></h2>
             <div id="mainDiv">
                 <div id="headerDiv">
                     <h2 id="dividerHeader">Groups</h2>

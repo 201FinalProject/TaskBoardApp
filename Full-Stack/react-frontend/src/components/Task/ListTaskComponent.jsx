@@ -41,19 +41,18 @@ class ListTaskComponent extends Component {
             <div>
                  <h2 className="text-center">Tasks List</h2>
                  <div className = "row">
-                    <button className="btn btn-primary" onClick={this.addTask}> Add Task</button>
+                    <button className="btn btn-primary" id="addTaskButton" onClick={this.addTask}> Add Task</button>
                  </div>
                  <br></br>
                  <div>
                         <table id="listTable" >
                             <thead>
-                                <tr style={{borderTop: "solid 1px #6A6A6A"}}>
+                                <tr style={{borderTop: "solid 1px #6A6A6A", borderLeft: "solid 1px black"}}>
                                     <th> Task Name</th>
                                     <th> Task Completed By</th>
                                     <th> Task Description</th>
                                     <th> Task Difficulty</th>
                                     <th> Task Completion Date</th>
-                                    <th> Task Group Code </th>
                                     <th> Actions</th>
                                 </tr>
                             </thead>
@@ -61,13 +60,12 @@ class ListTaskComponent extends Component {
                                 {
                                     this.state.tasks.map(
                                         task => 
-                                        <tr key = {task.id}>
+                                        <tr key = {task.id} style={{borderLeft: "solid 1px black"}}>
                                              <td> {task.taskName} </td>   
                                              <td> {task.completedBy}</td>
                                              <td> {task.description}</td>
                                              <td> {task.difficulty}</td>
                                              <td> {task.completionDate}</td>
-                                             <td> {task.groupCode}</td>
                                              <td>
                                                  <button onClick={ () => this.editTask(task.id)} className="btn btn-info">Update </button>
                                                  <button style={{marginLeft: "10px"}} onClick={ () => this.deleteTask(task.id)} className="btn btn-danger">Delete </button>

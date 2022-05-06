@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Link, Route, BrowserRouter } from "react-router-dom";
 import './GroupSelect.css';
-import { faElipsisH } from "@fortawesome/free-brands-svg-icons";
+// import { faElipsisH } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function GroupSelect() {

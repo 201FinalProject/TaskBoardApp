@@ -152,10 +152,10 @@ saveOrUpdateGroup = (e) => {
 
     // step 5
     
-        GuestLoginService.createGroup(group).then( res => {
-            this.props.history.push('/login');
-        });
-    }
+    GuestLoginService.createGroup(group).then( res => {
+        this.props.history.push('/login');
+    });
+}
 
 
 changeUserIDHandler= (event) => {
@@ -220,7 +220,7 @@ changeGroupIDHandler= (event) => {
                     value={this.state.groupCode} onChange={this.changeGroupIDHandler}/> <br></br>
                       <div style={useStyles.guestContainer}>
                           <div style={useStyles.guestVerticalCenter}>
-                              <button style={useStyles.guestLoginButton} type="submit" name="Register" onClick={this.saveOrUpdateGroup}>Guest Login</button>
+                              <button style={useStyles.guestLoginButton} type="submit" name="Register" onClick={event =>  window.location.href='/'} >Guest Login</button>
                           </div>
                       </div>
                       </form>

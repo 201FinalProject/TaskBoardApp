@@ -13,7 +13,7 @@ function HomePage(){
                 </div>
                 <hr id="divider"></hr>
             </div>
-            <h2 id="temp">INSERT CALENDAR</h2>
+            
             <div id="mainDiv">
                 <div id="headerDiv">
                     <h2 id="dividerHeader">Groups</h2>
