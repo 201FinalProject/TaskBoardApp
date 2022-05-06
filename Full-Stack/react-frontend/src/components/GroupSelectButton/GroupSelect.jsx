@@ -5,39 +5,14 @@ import './GroupSelect.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HomePageService from '../../services/HomePageService'
 
-class GroupSelect extends Component{
-    constructor(props) {
-        super(props)
-
-        this.state = {
-                groups: []
-        }
-        
-    }
-    componentDidMount(){
-        HomePageService.getGroups().then((res) => {
-            this.setState({ groups: res.data});
-        });
-    }
-
-    render() {
+function GroupSelect(props){
     return (
         
         <div id="surroundingDiv">
             <Link to="/GroupHome" id="logo">
                 <button type="button" id="grpBtn"> 
                     <p id="GHGroupName">
-                    {
-                        this.state.groups.map(
-                            group => 
-                            <tr key = {group.id}> 
-                                 <td> {group.groupCode}</td>
-                            </tr>
-                        )
-                    }
-                    
-                    
-                    
+                        {props.code}
                     </p>
                     <div class="dropdown">
                         <button class="dropbtn">•••</button>
@@ -60,7 +35,26 @@ class GroupSelect extends Component{
         </div>
         
     );
-                }
 }
+
+// class GroupSelect extends Component{
+//     constructor(props) {
+//         super(props)
+
+//         this.state = {
+//                 groups: []
+//         }
+        
+//     }
+//     componentDidMount(){
+//         HomePageService.getGroups().then((res) => {
+//             this.setState({ groups: res.data});
+//         });
+//     }
+
+//     render() {
+    
+//                 }
+// }
 
 export default GroupSelect;
