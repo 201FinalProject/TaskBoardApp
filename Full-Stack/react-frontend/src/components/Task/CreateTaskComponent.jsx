@@ -80,7 +80,7 @@ class CreateTaskComponent extends Component {
     }
 
     changeDifficultyHandler= (event) => {
-        this.setState({difficulty: event.value});
+        this.setState({difficulty: event});
     }
 
     changeCompletionDateHandler= (event) => {
