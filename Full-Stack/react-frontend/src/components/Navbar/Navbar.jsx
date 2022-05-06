@@ -4,6 +4,7 @@ import './Navbar.css';
 
 function Navbar() {
     return (
+      <div>
       <nav id="entirebar">
       <Link to="/" id="logo">
         Vision
@@ -38,6 +39,7 @@ function Navbar() {
         </li>
       </ul>
       </nav>
+      </div>
     );
   }
   
