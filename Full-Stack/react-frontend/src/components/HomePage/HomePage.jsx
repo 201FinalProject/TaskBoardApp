@@ -28,8 +28,7 @@ function HomePage(){
             </div>
             
             <GroupSelect></GroupSelect>
-            <GroupSelect></GroupSelect>
-            <GroupSelect></GroupSelect>
+            
         </div>
     )
 }
