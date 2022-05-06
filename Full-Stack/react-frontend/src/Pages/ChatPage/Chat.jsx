@@ -37,7 +37,6 @@ function Chat() {
     <div id="BIGDIV">
       <div className="App">
         <header>
-          <h1>Chatboard Global Chat</h1>
           <SignOut />
         </header>
 
@@ -107,9 +106,9 @@ function ChatRoom() {
 
     </main>
 
-    <form onSubmit={sendMessage}>
+    <form id ="form1" onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type Here" />
+      <input id ="input1" value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type Here" />
 
       <button id="send" type="submit" >Send!</button>
 

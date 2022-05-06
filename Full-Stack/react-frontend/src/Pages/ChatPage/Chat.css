@@ -59,7 +59,7 @@
     background: #6649b8;
   }
   
-  form {
+  #form1 {
     height: 10vh;
     position: fixed;
     bottom: 0;
@@ -69,13 +69,13 @@
     font-size: 1.5rem;
   }
   
-  form button {
+  #form1 button {
     width: 20%;
     background-color: rgb(56, 56, 143);
   }
   
   
-  input {
+  #input1 {
     line-height: 2;
     width: 100%;
     font-size: 2rem;
@@ -86,7 +86,16 @@
     padding: 0 10px;
   }
   
-  button {
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .sign-in, .sign-out{
+    color: #282c34;
+    background: white;
+    max-width: 400px;
+    margin: 0 auto;
     background-color: #738ab7; /* Green */
     border: 5px solid black;
     color: white;
@@ -96,19 +105,6 @@
     display: inline-block;
     cursor: pointer;
     font-size: 1.25rem;
-  }
-  
-  button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-  }
-  
-  
-  .sign-in {
-    color: #282c34;
-    background: white;
-    max-width: 400px;
-    margin: 0 auto;
   }
   
   ul, li {
