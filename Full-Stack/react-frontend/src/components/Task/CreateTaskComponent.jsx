@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import TaskService from '../../services/TaskService';
-import './TaskCreate.css';
+import ReactStars from "react-rating-stars-component";
+import { render } from "react-dom";
+import '../Task/TaskCreate.css';
 
 class CreateTaskComponent extends Component {
     constructor(props) {
@@ -104,36 +106,45 @@ class CreateTaskComponent extends Component {
         return(
             <div class = "main">
                 <form action="" method="">
-                <div className="form-group row">
+                <div className="form-group line">
                     <label id="title" for="title-id">Title: </label>
-                    <input type="text" className="form-control" id="title-id" name="title" placeholder="Task Name" name="taskName" 
-                        value={this.state.taskName} onChange={this.changeTaskNameHandler}></input>
-                    <button type="button" className="cancel" onClick={this.cancel.bind(this)} >Cancel</button>
+                    <input type="text" className="form" id="title-id" name="title" placeholder="Task Name" value={this.state.taskName} onChange={this.changeTaskNameHandler}></input>
+                    <button type="button" className = "save" onClick={this.saveOrUpdateTask}>Save</button>
+                    <button type="button" className= "cancel" onClick={this.cancel.bind(this)} >Cancel</button>
                 </div>
-                <div className="form-group row">
+                <div className="form-group line">
                     <label id="member" for="member-id">Member: </label>
-                    <input type="text" className="form-control" id="member-id" name="member" placeholder="Completed By" 
+                    <input type="text" className="form" id="member-id" name="member" placeholder="Completed By" 
                         value={this.state.completedBy} onChange={this.changeCompletedByHandler}></input>
                 </div>
-                <div className="form-group row">
+                <div className="form-group line">
                     <label id="dated" for="date-id">Due Date: </label>
-                    <input type="date" className="form-control" id="date-id" name="date" placeholder="Completion Date" 
+                    <input type="date" className="form" id="date-id" name="date" placeholder="Completion Date" 
                          value={this.state.completionDate} onChange={this.changeCompletionDateHandler}></input>
                 </div>
-                <div className="form-group row">
+                <div className="form-group line">
                     <label for="description-id">Description: </label>
                 </div>
-                <div className="form-group-row">
-                    <input type="text" className="form-control" id="description-id" name="description" placeholder="Add Description"
+                <div className="form-group line">
+                    <input type="text" className="form" id="description-id" name="description" placeholder="Add Description"
                      value={this.state.description} onChange={this.changeDescriptionHandler}></input>
                 </div>
-                <div className="form-group row">
-                    <label id="difficulty" for="difficulty-id">Difficulty: Stars? </label>
+                <div className="form-group line">
+                    <label id="difficulty" for="difficulty-id">Difficulty: </label>
+                    <label id="stars" for="stars-id">
+                    <ReactStars
+                    count={5}
+                    onChange={this.changeDifficultyHandler}
+                    size={50}
+                    isHalf={true}
+                    emptyIcon={<i className="far fa-star"></i>}
+                    halfIcon={<i className="fa fa-star-half-alt"></i>}
+                    fullIcon={<i className="fa fa-star"></i>}
+                    activeColor="#ffd700"
+                    />
+                    </label>
                     <button type="button" onClick={ () => this.deleteTask(this.id)} className="delete">Delete Task</button>
-                    <button className = "save" onClick={this.saveOrUpdateTask}>Save</button>
                 </div>
-    
-
                 </form>
             </div>
         )

@@ -13,7 +13,7 @@ function TaskCreate(){
         <div class = "main">
             {/* <PageHeader name="Create/Edit Task"></PageHeader> */}
             <form action="" method="">
-            <div class="form-group row">
+            <div class="form-group line">
                 <label id="title" for="title-id">Title: </label>
                 <input type="text" class="form-control" id="title-id" name="title" placeholder="Add Title"></input>
                 <button type="button" class="save">Save</button>
@@ -30,7 +30,7 @@ function TaskCreate(){
             <div class="form-group row">
                 <label for="description-id">Description: </label>
             </div>
-            <div class="form-group-row">
+            <div class="form-group row">
                 <input type="text" class="form-control" id="description-id" name="description" placeholder="Add Description" align="left"></input>
             </div>
             <div class="form-group row">

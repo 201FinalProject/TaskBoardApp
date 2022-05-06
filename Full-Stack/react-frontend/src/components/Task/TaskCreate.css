@@ -1,9 +1,6 @@
 .main{
     margin: auto;
-    margin-left: 110px;
-    margin-right: 110px;
-    
-
+    max-width: 1050px;
 }
 
 #title{
@@ -33,16 +30,7 @@ label{
     color: #000000;
 }
 
-input{
-    font-family: 'Sora';
-    font-style: normal;
-    font-weight: 200;
-    font-size: 28px;
-    line-height: 35px;
-    color: #000000;
-}
-
-.row{
+.line{
     margin-bottom: 36px;
 }
 
@@ -53,6 +41,12 @@ input{
     margin-right: 1.875%;
     border-width: 2px;
     border-radius: 4px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 28px;
+    line-height: 35px;
+    color: #000000;
 }
 
 #member-id{
@@ -61,6 +55,12 @@ input{
     height: 6%;
     border-width: 2px;
     border-radius: 4px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 28px;
+    line-height: 35px;
+    color: #000000;
 }
 
 #date-id{
@@ -68,22 +68,36 @@ input{
     max-width: 714px;
     border-width: 2px;
     border-radius: 4px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 28px;
+    line-height: 35px;
+    color: #000000;
 }
 
 #description-id{
     width: 65.5%;
     height: 388px;
     max-width: 918px;
-    margin-bottom: 2%;
+    /* margin-bottom: 2%; */
     border-width: 2px;
     border-radius: 4px;
+    font-family: 'Sora';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 28px;
+    line-height: 35px;
+    color: #000000;
 }
 
 #difficulty{
-    margin-right: 45%;
-    max-width: 918px;
+    margin-right: 2%;
 }
 
+#stars{
+    margin-right: 34%;
+}
 
 .save{
     background-color: #8DC2FF;
@@ -121,7 +135,7 @@ input{
     background-color: #FF7759;
     color: #FFFFFF;
     border-radius: 4px;
-
+    margin-top: 20px;
     width: 218px;
     height: 61px;
 
