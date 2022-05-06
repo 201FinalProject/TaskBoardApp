@@ -3,10 +3,9 @@
 // https://github.com/fireship-io/react-firebase-chat/tree/master/src
 // if this doesn't work, ^ original git
 
-import React, { useRef, useState } from 'react';
-import './App.css';
+import React, { Component, useRef, useState } from 'react';
+import './Chat.css';
 import img2 from './sss.png';
-
 
 import firebase from 'firebase/compat/app'; 
 import 'firebase/compat/firestore';
@@ -30,7 +29,7 @@ const firestore = firebase.firestore();
 const analytics = firebase.analytics();
 
 
-function App() {
+function Chat() {
 
   const [user] = useAuthState(auth);
 
@@ -133,4 +132,4 @@ function ChatMessage(props) {
   </>)
 }
 
-export default App;
+export default Chat;
