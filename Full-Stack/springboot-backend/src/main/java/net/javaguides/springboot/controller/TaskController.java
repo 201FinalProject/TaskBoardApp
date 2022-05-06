@@ -29,19 +29,19 @@ public class TaskController {
 	private TaskRepository TaskRepository;
 
 	// get all Tasks
-	@GetMapping(value = {"/Tasks", "/History"})
+	@GetMapping(value = {"/Tasks", "/History", "/"})
 	public List<Task> getAllTasks(){
 		return TaskRepository.findAll();
 	}		
 	
 	// create Task rest api
-	@PostMapping(value = {"/Tasks", "/History"})
+	@PostMapping(value = {"/Tasks", "/History", "/"})
 	public Task createTask(@RequestBody Task Task) {
 		return TaskRepository.save(Task);
 	}
 	
 	// get Task by id rest api
-	@GetMapping(value = {"/Tasks/{id}", "/History/{id}"})
+	@GetMapping(value = {"/Tasks/{id}", "/History/{id}", "/{id}"})
 	public ResponseEntity<Task> getTaskById(@PathVariable Long id) {
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task doesn't exist with id :" + id));
@@ -50,7 +50,7 @@ public class TaskController {
 	
 	// update Task rest api
 	
-	@PutMapping(value = {"/Tasks/{id}", "/History/{id}"})
+	@PutMapping(value = {"/Tasks/{id}", "/History/{id}", "/{id}"})
 	public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task TaskDetails){
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
@@ -70,7 +70,7 @@ public class TaskController {
 	}
 	
 	// delete Task rest api
-	@DeleteMapping(value = {"/Tasks/{id}", "/History/{id}"})
+	@DeleteMapping(value = {"/Tasks/{id}", "/History/{id}", "/{id}"})
 	public ResponseEntity<Map<String, Boolean>> deleteTask(@PathVariable Long id){
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
