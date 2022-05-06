@@ -4,6 +4,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import { Component } from "react";
 import background from "../../LongBackground.png";
 import { Redirect } from "react-router";
+import "../../components/HistoryTask/HistoryTask.css"
 
 const useStyles = {
     MainDivision: {
@@ -28,7 +29,12 @@ export default class HistoryPage extends Component {
           <div>
             <PageHeader name="History"></PageHeader>
           </div>
-            
+             <select id = "OrderBy" name = "OrderBy">
+                <option class = "SelectionDisabled" selected disabled>Order By:</option>
+                <option value = "CompletedBy">Completed By</option>
+                <option value = "Difficulty">Difficulty</option>
+                <option value = "CompletionDate">Completion Date</option>
+            </select>
             <HistoryTask></HistoryTask>
             <HistoryTask></HistoryTask>
             <HistoryTask></HistoryTask>

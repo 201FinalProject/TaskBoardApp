@@ -80,7 +80,7 @@ class CreateTaskComponent extends Component {
     }
 
     changeDifficultyHandler= (event) => {
-        this.setState({difficulty: event.target.value});
+        this.setState({difficulty: event.value});
     }
 
     changeCompletionDateHandler= (event) => {
@@ -126,8 +126,8 @@ class CreateTaskComponent extends Component {
                     <label for="description-id">Description: </label>
                 </div>
                 <div className="form-group line">
-                    <input type="text" className="form" id="description-id" name="description" placeholder="Add Description"
-                     value={this.state.description} onChange={this.changeDescriptionHandler}></input>
+                    <textarea align="top" type="text" className="form" id="description-id" name="description" placeholder="Add Description"
+                     value={this.state.description} onChange={this.changeDescriptionHandler}></textarea>
                 </div>
                 <div className="form-group line">
                     <label id="difficulty" for="difficulty-id">Difficulty: </label>
