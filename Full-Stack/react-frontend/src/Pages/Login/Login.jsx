@@ -13,8 +13,8 @@ import GroupService from '../../services/GroupService';
 const useStyles = {
   MainDivision: {
     width: "100%",
-    backgroundImage: `url(${background}`,
-    backgroundSize: "cover",
+    // backgroundImage: `url(${background}`,
+    // backgroundSize: "cover",
     height: "1024px"
   },
 
