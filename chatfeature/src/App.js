@@ -5,6 +5,8 @@
 
 import React, { useRef, useState } from 'react';
 import './App.css';
+import img2 from './sss.png';
+
 
 import firebase from 'firebase/compat/app'; 
 import 'firebase/compat/firestore';
@@ -124,7 +126,8 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || "./sss.png"} />
+      
+      <img src={photoURL} onError={(e) => (e.target.onerror = null, e.target.src = img2)}/>
       <p>{text}</p>
     </div>
   </>)
