@@ -33,16 +33,18 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header>
-        <h1>ChoreBoard Chat</h1>
-        <SignOut />
-      </header>
+    <div id="BIGDIV">
+      <div className="App">
+        <header>
+          <h1>Chatboard Global Chat</h1>
+          <SignOut />
+        </header>
 
-      <section>
-        {user ? <ChatRoom /> : <SignIn />}
-      </section>
+        <section>
+          {user ? <ChatRoom /> : <SignIn />}
+        </section>
 
+      </div>
     </div>
   );
 }
@@ -106,9 +108,9 @@ function ChatRoom() {
 
     <form onSubmit={sendMessage}>
 
-      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
+      <input value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="Type Here" />
 
-      <button type="submit" >🕊️</button>
+      <button id="send" type="submit" >Send!</button>
 
     </form>
   </>)

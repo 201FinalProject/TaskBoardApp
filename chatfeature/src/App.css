@@ -1,23 +1,29 @@
-body {
-  background-color: #282c34;
+
+
+#BIGDIV {
+  background-image: url("./LongBackground.png");
+  background-size: cover;
 }
 
 .App {
   text-align: center;
-  max-width: 728px;
-  margin: 0 auto;
+  width: 100%;
+  margin: auto;
+}
+h1 {
+  border: 5px solid black;
 }
 
 .App header {
-  background-color: #181717;
-  height: 10vh;
-  min-height: 50px;
-  color: white;
+  background: transparent;
+  height: 12vh;
+  min-height: 70px;
+  line-height: 100px;
+  color: rgb(113, 38, 38);
   position: fixed;
   width: 100%;
-  max-width: 728px;
   top: 0;
-  display: flex;
+  display: block;
   align-items: center;
   justify-content: space-center;
   z-index: 99;
@@ -30,13 +36,14 @@ body {
   flex-direction: column;
   justify-content: center;
   min-height: 100vh;
-  background-color: rgb(40, 37, 53);
+  background-color: white(40, 37, 53);
 }
 
 main {
   padding: 10px;
   height: 80vh;
   margin: 10vh 0 10vh;
+  margin-top: 140px;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -60,7 +67,6 @@ form {
   bottom: 0;
   background-color: rgb(24, 23, 23);
   width: 100%;
-  max-width: 728px;
   display: flex;
   font-size: 1.5rem;
 }
@@ -72,19 +78,19 @@ form button {
 
 
 input {
-  line-height: 1.5;
+  line-height: 2;
   width: 100%;
-  font-size: 1.5rem;
-  background: rgb(58, 58, 58);
+  font-size: 2rem;
+  background: rgb(112, 103, 103);
   color: white;
   outline: none;
-  border: none;
+  border: 1px solid black;;
   padding: 0 10px;
 }
 
 button {
-  background-color: #282c34; /* Green */
-  border: none;
+  background-color: #738ab7; /* Green */
+  border: 5px solid black;
   color: white;
   padding: 15px 32px;
   text-align: center;
@@ -107,9 +113,6 @@ button:disabled {
   margin: 0 auto;
 }
 
-
-
-
 ul, li {
   text-align: left;
   list-style: none;
@@ -118,7 +121,7 @@ ul, li {
 p {
   max-width: 500px;
   margin-bottom: 12px;
-  line-height: 24px;
+  line-height: 30px;
   padding: 10px 20px;
   border-radius: 25px;
   position: relative;
@@ -131,9 +134,12 @@ p {
   align-items: center;
 }
 
-
 .sent {
   flex-direction: row-reverse;
+}
+#send {
+  border: 1px solid black;
+  background-color: rgb(184, 124, 124);
 }
 
 .sent p {
@@ -142,13 +148,13 @@ p {
   align-self: flex-end;
 }
 .received p {
-  background: #e5e5ea;
+  background: #c9e3cdc6;
   color: black;
 }
 
 img {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   margin: 2px 5px;
 }
