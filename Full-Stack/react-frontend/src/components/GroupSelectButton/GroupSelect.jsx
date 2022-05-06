@@ -1,16 +1,44 @@
-import React from 'react';
+import React, { Component } from 'react'
 import { Routes, Link, Route, BrowserRouter } from "react-router-dom";
 import './GroupSelect.css';
 import { faElipsisH } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import HomePageService from '../../services/HomePageService'
 
-function GroupSelect() {
+class GroupSelect extends Component{
+    constructor(props) {
+        super(props)
+
+        this.state = {
+                groups: []
+        }
+        
+    }
+    componentDidMount(){
+        HomePageService.getGroups().then((res) => {
+            this.setState({ groups: res.data});
+        });
+    }
+
+    render() {
     return (
         
         <div id="surroundingDiv">
             <Link to="/GroupHome" id="logo">
                 <button type="button" id="grpBtn"> 
-                    <p id="GHGroupName">GroupHome</p>
+                    <p id="GHGroupName">
+                    {
+                        this.state.groups.map(
+                            group => 
+                            <tr key = {group.id}> 
+                                 <td> {group.groupCode}</td>
+                            </tr>
+                        )
+                    }
+                    
+                    
+                    
+                    </p>
                     <div class="dropdown">
                         <button class="dropbtn">•••</button>
                         <div class="dropdown-content">
@@ -32,6 +60,7 @@ function GroupSelect() {
         </div>
         
     );
+                }
 }
 
 export default GroupSelect;
