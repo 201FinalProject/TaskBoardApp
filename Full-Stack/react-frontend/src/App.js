@@ -22,6 +22,7 @@ import ViewUserComponent from './components/User/ViewUserComponent.jsx';
 import ListGroupComponent from './components/Group/ListGroupComponent.jsx';
 import CreateGroupComponent from './components/Group/CreateGroupComponent.jsx';
 import ViewGroupComponent from './components/Group/ViewGroupComponent.jsx';
+import GroupHome from './Pages/GroupHome/GroupHome';
 
 function App() {
   return (
@@ -49,6 +50,7 @@ function App() {
                           <Route path = "/groups" component = {ListGroupComponent}></Route>
                           <Route path = "/add-group/:id" component = {CreateGroupComponent}></Route>
                           <Route path = "/view-group/:id" component = {ViewGroupComponent}></Route>
+                          <Route path = "/GroupHome" component = {GroupHome }></Route>
                           {/* <Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route> */}
                     </Switch>
                 </div>

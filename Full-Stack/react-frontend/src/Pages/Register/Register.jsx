@@ -130,7 +130,7 @@ export default class RegisterPage extends Component {
                         </div>
                         <div className="container">
                             <div className="vertical-center">
-                            <button name = "Register" onClick={this.saveOrUpdateUser}>Create Account</button>
+                            <button className="button" name = "Register" onClick={this.saveOrUpdateUser}>Create Account</button>
                    
                                 </div>
                         </div>

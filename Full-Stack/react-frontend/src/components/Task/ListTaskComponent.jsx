@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TaskService from '../../services/TaskService'
+import './ListTaskComponent.css'
 
 class ListTaskComponent extends Component {
     constructor(props) {
@@ -43,11 +44,10 @@ class ListTaskComponent extends Component {
                     <button className="btn btn-primary" onClick={this.addTask}> Add Task</button>
                  </div>
                  <br></br>
-                 <div className = "row">
-                        <table className = "table table-striped table-bordered">
-
+                 <div>
+                        <table id="listTable" >
                             <thead>
-                                <tr>
+                                <tr style={{borderTop: "solid 1px #6A6A6A"}}>
                                     <th> Task Name</th>
                                     <th> Task Completed By</th>
                                     <th> Task Description</th>
