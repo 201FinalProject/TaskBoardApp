@@ -127,7 +127,7 @@ function ChatMessage(props) {
     <div className={`message ${messageClass}`}>
       
       <img src={photoURL} onError={(e) => (e.target.onerror = null, e.target.src = img2)}/>
-      <p>{text}</p>
+      <p className="p1">{text}</p>
     </div>
   </>)
 }
