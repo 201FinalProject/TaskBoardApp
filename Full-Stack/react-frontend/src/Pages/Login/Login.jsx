@@ -149,12 +149,10 @@ saveOrUpdateGroup = (e) => {
     e.preventDefault();
     let group = {userID: "guest", groupCode: this.state.groupCode};
     console.log('group => ' + JSON.stringify(group));
-
-    // step 5
-    
-        GuestLoginService.createGroup(group).then( res => {
-          this.props.history.push('/');
-        });
+  
+    GuestLoginService.createGroup(group).then( res => {
+      this.props.history.push('/');
+    });
     }
 
 

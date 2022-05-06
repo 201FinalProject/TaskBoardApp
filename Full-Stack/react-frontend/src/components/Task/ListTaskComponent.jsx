@@ -33,15 +33,14 @@ class ListTaskComponent extends Component {
     }
 
     addTask(){
-        this.props.history.push('/add-task/_add');
+        this.props.history.push('add-task/_add');
     }
 
     render() {
         return (
             <div>
-                 <h2 className="text-center">Tasks List</h2>
                  <div className = "row">
-                    <button className="btn btn-primary" id="addTaskButton" onClick={this.addTask}> Add Task</button>
+                    {/* <button className="btn btn-primary" id="addTaskButton" onClick={this.addTask}> Add Task</button> */}
                  </div>
                  <br></br>
                  <div>
