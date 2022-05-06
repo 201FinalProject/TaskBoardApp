@@ -41,12 +41,11 @@
   }
   
   main {
-    padding: 10px;
-    height: 80vh;
-    margin: 10vh 0 10vh;
-    margin-top: 140px;
+    height: 100vh;
+    margin-top: 10vh;
+    margin-bottom:0;
     overflow-y: scroll;
-    display: flex;
+    display: fixed;
     flex-direction: column;
   }
   
