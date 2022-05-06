@@ -37,6 +37,9 @@ function Navbar() {
             Create/Join Group
           </Link>
         </li>
+        <li>
+          <Link to="/Chat">Global Chat</Link>
+        </li>
       </ul>
       </nav>
       </div>
