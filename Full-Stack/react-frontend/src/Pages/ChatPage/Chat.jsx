@@ -37,6 +37,7 @@ function Chat() {
     <div id="BIGDIV">
       <div className="App">
         <header>
+          <h1>Global Chat</h1>
           <SignOut />
         </header>
 

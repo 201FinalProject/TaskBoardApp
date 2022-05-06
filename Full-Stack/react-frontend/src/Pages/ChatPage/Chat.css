@@ -10,6 +10,8 @@
   }
   h1 {
     border: 5px solid black;
+    background-image: url("./LongBackground.png");
+    background-size: cover;
   }
   
   .App header {
