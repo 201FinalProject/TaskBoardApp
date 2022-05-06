@@ -29,7 +29,7 @@ function App() {
     <div id="BIGDIV">
         <Router>
             <Navbar />
-                <div>
+                <div style={{clear: "both"}}>
                     <Switch> 
                           <Route path = "/" exact component = {HomePage}></Route>
                           <Route path = "/employees" component = {ListEmployeeComponent}></Route>
@@ -54,7 +54,6 @@ function App() {
                           {/* <Route path = "/update-employee/:id" component = {UpdateEmployeeComponent}></Route> */}
                     </Switch>
                 </div>
-              <FooterComponent />
         </Router>
     </div>
     

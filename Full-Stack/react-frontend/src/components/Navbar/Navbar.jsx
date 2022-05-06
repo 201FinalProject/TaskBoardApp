@@ -5,7 +5,7 @@ import './Navbar.css';
 function Navbar() {
     return (
       <nav id="entirebar">
-          <Link to="/" id="logo">
+      <Link to="/" id="logo">
         Vision
       </Link>
       <ul>
