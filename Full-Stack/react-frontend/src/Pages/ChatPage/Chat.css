@@ -5,11 +5,14 @@
   
   .App {
     text-align: center;
+    position: fixed;
     width: 100%;
     margin: auto;
   }
   h1 {
     border: 5px solid black;
+    background-image: url("./LongBackground.png");
+    background-size: cover;
   }
   
   .App header {
@@ -95,7 +98,7 @@
     color: #282c34;
     background: white;
     max-width: 400px;
-    margin: 0 auto;
+    margin: auto;
     background-color: #738ab7; /* Green */
     border: 5px solid black;
     color: white;
@@ -105,6 +108,15 @@
     display: inline-block;
     cursor: pointer;
     font-size: 1.25rem;
+  }
+
+  .sign-in {
+    margin-top: 0px;
+  }
+
+  .sign-out {
+    height: 70px;
+    line-height: 35px;
   }
   
   ul, li {
