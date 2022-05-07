@@ -10,7 +10,12 @@ function Navbar() {
         Vision
       </Link>
       <ul>
-        
+        <li>
+          <Link to="/" className="home-button">
+            Home
+          </Link>
+          
+        </li>
         <li>
           <Link to="/login" className="login-button">
             Login
@@ -34,18 +39,6 @@ function Navbar() {
         </li>
         <li>
           <Link to="/Chat" target="_blank">Global Chat</Link>
-        </li>
-        <li>
-          <Link to="/GroupHome" className="home-button">
-            Group Home
-          </Link>
-          
-        </li>
-        <li>
-          <Link to="/" className="home-button">
-            Home
-          </Link>
-          
         </li>
       </ul>
       </nav>
