@@ -24,8 +24,8 @@ class TaskService {
         return axios.delete(TASK_API_BASE_URL + '/' + taskId);
     }
 
-    markTaskCompleted(task, taskId){
-        return axios.put(TASK_API_BASE_URL + 'completed/' + taskId, task);
+    changeTaskCompletion(task, taskId){
+        return axios.put("http://localhost:8080/api/auth/history/" + taskId, task);
     }
 }
 

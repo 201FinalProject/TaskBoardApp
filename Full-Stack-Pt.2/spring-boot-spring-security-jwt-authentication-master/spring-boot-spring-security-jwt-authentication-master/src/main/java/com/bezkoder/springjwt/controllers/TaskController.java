@@ -58,7 +58,7 @@ public class TaskController {
 	// update Task rest api
 	
 	
-	@PutMapping(value = { "/Tasks/{id}", "/History/{id}" })
+	@PutMapping(value = { "/Tasks/{id}"})
 	public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task TaskDetails) {
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
@@ -77,7 +77,7 @@ public class TaskController {
 		return ResponseEntity.ok(updatedTask);
 	}
 	
-	@PutMapping(value = "/Taskscompleted/{id}")
+	@PutMapping(value = "/history/{id}")
 	public ResponseEntity<Task> markCompleted(@PathVariable Long id, @RequestBody Task TaskDetails){
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
@@ -88,7 +88,7 @@ public class TaskController {
 		Task.setDifficulty(TaskDetails.getDifficulty());
 		Task.setCompletionDate(TaskDetails.getCompletionDate());
 		Task.setGroupCode(TaskDetails.getGroupCode());
-		Task.setCompleted(true);
+		Task.setCompleted(TaskDetails.isCompleted());
 		
 		Task completedTask = TaskRepository.save(Task);
 		HistoryTask x = new HistoryTask(completedTask);

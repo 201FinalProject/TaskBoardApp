@@ -27,8 +27,8 @@ class ListTaskComponent extends Component {
         //this.props.history.push(`/add-task/${id}`);
     }
     markCompleted(id, task){
-        TaskService.markTaskCompleted(task, id);
-        console.log(task.completed);
+        task.completed = !task.completed;
+        TaskService.changeTaskCompletion(task, id);
     }
 
     componentDidMount(){
@@ -66,7 +66,7 @@ class ListTaskComponent extends Component {
                                         task => 
                                         <tr key = {task.id} style={{borderLeft: "solid 1px black"}}>
                                              <td> 
-                                                 <input type="checkbox" value={task.completed} onChange={this.markCompleted(task.id, task)}/>
+                                                 <input key={task.id} type="checkbox" defaultChecked={task.completed} onClick={this.markCompleted(task.id, task)}/>
                                              </td>
                                              <td> {task.taskName} </td>   
                                              <td> {task.completedBy}</td>
