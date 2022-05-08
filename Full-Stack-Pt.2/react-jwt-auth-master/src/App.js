@@ -6,7 +6,7 @@ import "./Navbar.css";
 
 import AuthService from "./services/auth.service";
 
-import Login from "./components/login.component";
+import Login from "./components/login.component.jsx";
 import Register from "./components/register.component";
 import HomePage from "./Pages/HomePage/HomePage";
 import Profile from "./components/profile.component";
