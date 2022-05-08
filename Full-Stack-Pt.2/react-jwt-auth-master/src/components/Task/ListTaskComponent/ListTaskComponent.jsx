@@ -42,7 +42,7 @@ class ListTaskComponent extends Component {
     render() {
         return (
             <div>
-                 <h2 className="text-center">Tasks List</h2>
+                 
                  <div className = "row">
                     <button className="btn btn-primary" id="addTaskButton" onClick={event => window.location.href='/add-task/_add'} id="AddTaskBtn"> Add Task</button>
                  </div>
