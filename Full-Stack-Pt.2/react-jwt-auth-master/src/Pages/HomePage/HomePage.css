@@ -1,7 +1,7 @@
 #mainHome {
     width: 100%;
     
-    height: 1500px;
+    height: 1200px;
     
     
 }
@@ -15,7 +15,6 @@
 }
 #headerDiv {
     /* background-color: red;  */
-    width: 40%;
     float: left;
     margin-top: 13px;
     margin-left: 8%;
@@ -56,7 +55,7 @@
 #dividerHeader {
     margin-bottom: 0px;
     margin-top: 0px;
-    width: 40%;
+    width: 100%;
     
     font-family: 'Sora';
     font-style: normal;

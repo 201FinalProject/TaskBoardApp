@@ -117,7 +117,9 @@ class CreateTaskComponent extends Component {
     }
     render() {
         return(
+            
             <div class = "main">
+                
                 <PageHeader  name = {this.getTitle() ? "Add Task" : "Update Task"}/>
                 <form action="" method="">
                 <div className="form-group line">

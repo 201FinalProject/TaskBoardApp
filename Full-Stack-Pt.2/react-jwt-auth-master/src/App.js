@@ -101,7 +101,7 @@ class App extends Component {
               <Link to="/Chat" t>Global Chat</Link>
             </li>
             <li>
-              <Link to="/GroupHome" className="home-button">
+              <Link to="/HomePage" className="home-button">
                 Group Home
               </Link>
             </li>

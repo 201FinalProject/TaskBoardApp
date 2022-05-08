@@ -5,6 +5,7 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import ListTaskComponent from '../../components/Task/ListTaskComponent/ListTaskComponent';
 import UserService from "../../services/user.service";
+import EventBus from "../../common/EventBus";
 
 
 class HomePage extends Component{
@@ -16,7 +17,7 @@ class HomePage extends Component{
         }
     }
     componentDidMount() {
-        UserService.getPublicContent().then(
+        UserService.getUserBoard().then(
           response => {
             this.setState({
               content: response.data
@@ -25,10 +26,13 @@ class HomePage extends Component{
           error => {
             this.setState({
               content:
-                (error.response && error.response.data) ||
+                (error.response &&
+                  error.response.data &&
+                  error.response.data.message) ||
                 error.message ||
-                error.toString()
+                error.toString()  
             });
+    
           }
         );
       }
@@ -39,7 +43,7 @@ class HomePage extends Component{
                 
                 <div>
                     <div id="headerDiv">
-                        <h2 id="dividerHeader">My Tasks</h2>
+                        <h2 id="dividerHeader">Group Tasks</h2>
                     </div>
                     <hr id="divider" style={{clear: "both"}}></hr>   
                 </div>
@@ -58,7 +62,6 @@ class HomePage extends Component{
                     </div>
                     <hr id="divider" style={{clear: "both"}}></hr>
                 </div>
-                {
                 this.state.groups.map(
                         group => 
                         <GroupSelect key={group.id} code={group.groupCode}></GroupSelect>
