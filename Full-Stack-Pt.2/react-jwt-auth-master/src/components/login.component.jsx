@@ -59,9 +59,9 @@ const useStyles = {
 
     InnerGuestLogin: {
         textAlign: "center", 
-        marginTop: "0px",
-        marginBottom: "-5px",
+        marginTop: "20px",
         marginRight: "235px",
+        marginBottom: "-12px",
         fontFamily: "DM Sans",
         fontSize: "28px",
         fontWeight: "700",
@@ -76,11 +76,11 @@ const useStyles = {
         fontFamily: "DM Sans",
         color: "#000000",
         marginTop: "20px",
-        marginBottom: "90px"
     },
 
     loginButton: {
-        marginTop: "20px",
+        marginTop: "10px",
+        marginBottom: "10px",
         width: "390px",
         height: "2.5em",
         caretColor: "transparent",
@@ -102,7 +102,7 @@ const useStyles = {
         boxSizing: "border-box",
         fontSize: "1em",
         fontFamily: "DM Sans",
-        marginBottom: "30px",
+        marginTop: "10px",
         backgroundColor: "#87CEFA",
         display: "block",
         margin: "auto",
@@ -277,14 +277,6 @@ export default class Login extends Component {
               this.form = c;
             }}
           >
-            <Input
-                type="text"
-                style={useStyles.Boxes}
-                placeholder="Group Code"
-                name="groupCode"
-                value={this.state.groupCode}
-                onChange={this.onChangeGroupCode}
-              />
               <br></br>
             <div style={useStyles.guestContainer}>
               <div style={useStyles.guestVerticalCenter}>
