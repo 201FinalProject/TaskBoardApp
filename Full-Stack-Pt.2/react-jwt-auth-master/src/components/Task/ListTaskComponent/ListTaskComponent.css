@@ -13,6 +13,18 @@ tr{
     text-align: center;
 }
 
-#addTaskButton {
+#AddTaskBtn {
     margin-left: 1032px;
+    background-color: #8DC2FF;
+    color: black;
+}
+
+#btn123 {
+    background-color: #8DC2FF;
+    color: black;
+}
+
+#btn234 {
+    background-color: #FF7759;
+    color: black;
 }

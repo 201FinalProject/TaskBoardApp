@@ -44,7 +44,7 @@ class ListTaskComponent extends Component {
             <div>
                  <h2 className="text-center">Tasks List</h2>
                  <div className = "row">
-                    <button className="btn btn-primary" id="addTaskButton" onClick={event => window.location.href='/add-task/_add'}> Add Task</button>
+                    <button className="btn btn-primary" id="addTaskButton" onClick={event => window.location.href='/add-task/_add'} id="AddTaskBtn"> Add Task</button>
                  </div>
                  <br></br>
 
@@ -56,7 +56,7 @@ class ListTaskComponent extends Component {
                                     <th> Task Name</th>
                                     <th> Task Assigned To</th>
                                     <th> Task Assigned By</th>
-                                    <th> Task Description</th>
+                                    
                                     <th> Task Difficulty</th>
                                     <th> Task Completion Date</th>
                                     <th> Actions</th>
@@ -73,13 +73,13 @@ class ListTaskComponent extends Component {
                                              <td> {task.taskName} </td>   
                                              <td> {task.completedBy}</td>
                                              <td> {task.assignedBy}</td>
-                                             <td> {task.description}</td>
+                                             
                                              <td> {task.difficulty}</td>
                                              <td> {task.completionDate}</td>
                                              <td>
-                                                 <button onClick={event => window.location.href='/add-task/'+task.id} className="btn btn-info">Update </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={() => this.deleteTask(task.id)} className="btn btn-danger">Delete </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={event => window.location.href='/view-task/'+task.id} className="btn btn-info">View </button>
+                                                 <button onClick={event => window.location.href='/add-task/'+task.id} className="btn btn-info" id="btn123">Update </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={() => this.deleteTask(task.id)} className="btn btn-danger" id="btn234">Delete </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={event => window.location.href='/add-task/'+task.id} className="btn btn-info" id="btn123">View </button>
                                              </td>
                                         </tr>
                                     )
