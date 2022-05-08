@@ -47,7 +47,8 @@ class ListTaskComponent extends Component {
                             <thead>
                                 <tr style={{borderTop: "solid 1px #6A6A6A", borderLeft: "solid 1px black"}}>
                                     <th> Task Name</th>
-                                    <th> Task Completed By</th>
+                                    <th> Task Assigned To</th>
+                                    <th> Task Assigned By</th>
                                     <th> Task Description</th>
                                     <th> Task Difficulty</th>
                                     <th> Task Completion Date</th>
@@ -61,6 +62,7 @@ class ListTaskComponent extends Component {
                                         <tr key = {task.id} style={{borderLeft: "solid 1px black"}}>
                                              <td> {task.taskName} </td>   
                                              <td> {task.completedBy}</td>
+                                             <td> {task.assignedBy}</td>
                                              <td> {task.description}</td>
                                              <td> {task.difficulty}</td>
                                              <td> {task.completionDate}</td>

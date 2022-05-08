@@ -60,6 +60,7 @@ public class TaskController {
 
 		Task.setTaskName(TaskDetails.getTaskName());
 		Task.setCompletedBy(TaskDetails.getCompletedBy());
+		Task.setAssignedBy(TaskDetails.getAssignedBy());
 		Task.setDescription(TaskDetails.getDescription());
 		System.out.println(TaskDetails.getDescription());
 		System.out.println("TaskDetails()");

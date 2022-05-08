@@ -13,6 +13,7 @@ class CreateTaskComponent extends Component {
             id: this.props.match.params.id,
             taskName: '',
             completedBy: '',
+            assignedBy: '',
             description: '',
             difficulty: '',
             completionDate: '',
@@ -20,6 +21,7 @@ class CreateTaskComponent extends Component {
         }
         this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
         this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
+        this.changeAssignedBy = this.changeAssignedBy.bind(this);
         this.saveOrUpdateTask = this.saveOrUpdateTask.bind(this);
     }
 
@@ -32,6 +34,7 @@ class CreateTaskComponent extends Component {
                 this.setState({
                     taskName: task.taskName,
                     completedBy: task.completedBy,
+                    assignedBy: task.assignedBy,
                     description: task.description,
                     difficulty: task.difficulty,
                     completionDate: task.completionDate,
@@ -47,6 +50,7 @@ class CreateTaskComponent extends Component {
         let task = {
             taskName: this.state.taskName, 
             completedBy: this.state.completedBy, 
+            assignedBy: this.state.assignedBy,
             description: this.state.description, 
             difficulty: this.state.difficulty, 
             completionDate: this.state.completionDate, 
@@ -78,6 +82,10 @@ class CreateTaskComponent extends Component {
 
     changeCompletedByHandler= (event) => {
         this.setState({completedBy: event.target.value});
+    }
+
+    changeAssignedBy= (event) => {
+        this.setState({assignedBy: event.target.value});
     }
 
     changeDescriptionHandler= (event) => {
@@ -120,8 +128,11 @@ class CreateTaskComponent extends Component {
                 </div>
                 <div className="form-group line">
                     <label id="member" for="member-id">Member: </label>
-                    <input type="text" className="form" id="member-id" name="member" placeholder="Completed By" 
+                    <input type="text" className="form" id="member-id" name="member" placeholder="Assigned To" 
                         value={this.state.completedBy} onChange={this.changeCompletedByHandler}></input>
+                    <label id="member" for="member-id">Member: </label>
+                    <input type="text" className="form" id="member-id" name="member" placeholder="Assigned By" 
+                        value={this.state.assignedBy} onChange={this.changeAssignedBy}></input>
                 </div>
                 <div className="form-group line">
                     <label id="dated" for="date-id">Due Date: </label>
