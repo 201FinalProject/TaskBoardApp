@@ -44,16 +44,16 @@ public class Task {
 		
 	}
 	
-	public Task(String taskName, String completedBy, String description, double difficulty, String completionDate, String groupCode, boolean completed) {
+	public Task(String taskName, String completedBy, String assignedBy, String description, double difficulty, String completionDate, String groupCode, boolean completed) {
 		super();
 		this.taskName = taskName;
 		this.completedBy = completedBy;
 		this.assignedBy = assignedBy;
 		this.description = description;
 		this.difficulty = difficulty;
-        this.completionDate = completionDate;
-        this.groupCode = groupCode;
-        this.completed = completed;
+        	this.completionDate = completionDate;
+        	this.groupCode = groupCode;
+        	this.completed = completed;
 	}
 	
 	public boolean isCompleted() {
