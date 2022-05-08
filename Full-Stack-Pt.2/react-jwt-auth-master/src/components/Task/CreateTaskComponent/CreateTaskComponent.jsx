@@ -64,11 +64,11 @@ class CreateTaskComponent extends Component {
         // step 5
         if(this.state.id === '_add'){
             TaskService.createTask(task).then(res =>{
-                this.props.history.push('/GroupHome');
+                this.props.history.push('/HomePage');
             });
         }else{
             TaskService.updateTask(task, this.state.id).then( res => {
-                this.props.history.push('/GroupHome');
+                this.props.history.push('/HomePage');
             });
         }
     }
@@ -108,7 +108,7 @@ class CreateTaskComponent extends Component {
     }
 
     cancel(){
-        this.props.history.push('/GroupHome');
+        this.props.history.push('/HomePage');
     }
 
     getTitle(){
