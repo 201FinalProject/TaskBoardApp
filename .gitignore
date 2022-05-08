@@ -1,13 +1,9 @@
 /bin/
-<<<<<<< HEAD
-<<<<<<< HEAD
 
 /node_modules.DS_Store
-=======
 .DS_Store
 /node_modules
->>>>>>> de69c8f9ce8faf75b0210ab16d3160e9fbda09f8
-=======
+
 
 /node_modules
->>>>>>> parent of c3af608b (Update .gitignore)
+node_modules
