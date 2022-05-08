@@ -13,6 +13,16 @@
 
 }
 
+.alert{
+    width: 383.42926025390625px;
+    border-radius: 4px;
+    box-shadow: inset 0px -1px 0px #000000, inset 1px 0px 0px #000000, inset -1px 0px 0px #000000, inset 0px 1px 0px #000000;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 h1 {
     text-align: center;
     font-family: DM Sans;
