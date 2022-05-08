@@ -89,22 +89,7 @@ class App extends Component {
               )}
             </li>
             <li>
-              <Link to={"/history"} className="history-button">
-                History
-              </Link>
-            </li>
-            <li>
-              <Link to={"add-task/_add"}>
-                Create Task
-              </Link>
-            </li>
-            <li>
               <Link to="/Chat" t>Global Chat</Link>
-            </li>
-            <li>
-              <Link to="/HomePage" className="home-button">
-                Group Home
-              </Link>
             </li>
           </ul>
         </nav>
