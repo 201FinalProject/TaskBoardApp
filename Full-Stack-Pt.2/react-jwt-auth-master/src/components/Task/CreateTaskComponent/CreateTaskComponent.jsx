@@ -128,11 +128,11 @@ class CreateTaskComponent extends Component {
                     
                 </div>
                 <div className="form-group line">
-                    <label id="member" for="member-id">Member: </label>
-                    <input type="text" className="form" id="member-id" name="member" placeholder="Assigned To" 
+                    <label id="member" for="member-id">Assigned To: </label>
+                    <input type="text" className="form" id="member-id" name="member" placeholder="Add Member" 
                         value={this.state.completedBy} onChange={this.changeCompletedByHandler}></input>
-                    <label id="member" for="member-id">Member: </label>
-                    <input type="text" className="form" id="member-id" name="member" placeholder="Assigned By" 
+                    <label id="member" for="member-id">Assigned By: </label>
+                    <input type="text" className="form" id="member-id" name="member" placeholder="Add Member" 
                         value={this.state.assignedBy} onChange={this.changeAssignedBy}></input>
                 </div>
                 <div className="form-group line">
