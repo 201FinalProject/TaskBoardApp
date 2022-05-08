@@ -7,9 +7,7 @@ import HistoryService from "../../services/HistoryService";
 
 const useStyles = {
     MainDivision: {
-      // backgroundImage: `url(${background}`,
-      // backgroundSize: "cover",
-      
+      height: "1200px"
     }
 }
 
@@ -29,7 +27,7 @@ export default class HistoryPage extends Component {
       }
       render() {
         return(
-          <div style={useStyles.MainDivision}>
+          <div style={useStyles.MainDivision} >
             <div>
               <PageHeader name="History"></PageHeader>
             </div>
