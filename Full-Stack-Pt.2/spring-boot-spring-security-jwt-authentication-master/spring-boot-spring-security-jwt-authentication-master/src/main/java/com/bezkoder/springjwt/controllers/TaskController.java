@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bezkoder.springjwt.models.HistoryTask;
 import com.bezkoder.springjwt.models.Task;
 import com.bezkoder.springjwt.repository.TaskRepository;
 import com.bezkoder.springjwt.exceptions.ResourceNotFoundException;
+import com.bezkoder.springjwt.repository.HistoryRepository;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -26,6 +28,9 @@ public class TaskController {
 
 	@Autowired
 	private TaskRepository TaskRepository;
+	
+	@Autowired
+	private HistoryRepository historyRepository;
 
 	// get all Tasks
 	@GetMapping(value = {"/Tasks", "/History"})
@@ -72,7 +77,7 @@ public class TaskController {
 		return ResponseEntity.ok(updatedTask);
 	}
 	
-	@PutMapping(value = "/Tasks/completed/{id}")
+	@PutMapping(value = "/Taskscompleted/{id}")
 	public ResponseEntity<Task> markCompleted(@PathVariable Long id, @RequestBody Task TaskDetails){
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
@@ -86,6 +91,8 @@ public class TaskController {
 		Task.setCompleted(true);
 		
 		Task completedTask = TaskRepository.save(Task);
+		HistoryTask x = new HistoryTask(completedTask);
+		historyRepository.save(x);
 		return ResponseEntity.ok(completedTask);
 	}
 	 

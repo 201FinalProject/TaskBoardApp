@@ -34,7 +34,7 @@ public class HistoryTask {
 	private String groupCode;
     
     @Column(name = "completed")
-    private boolean completed;
+    private boolean completed = false;
 	
     //constructors
 	public HistoryTask() {
@@ -49,6 +49,16 @@ public class HistoryTask {
         this.completionDate = completionDate;
         this.groupCode = groupCode;
         this.completed = completed;
+	}
+	
+	public HistoryTask(Task x) {
+		this.taskName = x.getTaskName();
+		this.completedBy = x.getCompletedBy();
+		this.description = x.getDescription();
+		this.difficulty = x.getDifficulty();
+		this.completionDate = x.getCompletionDate();
+		this.groupCode = x.getGroupCode();
+		this.completed = x.isCompleted();
 	}
 	
 	public boolean isCompleted() {
