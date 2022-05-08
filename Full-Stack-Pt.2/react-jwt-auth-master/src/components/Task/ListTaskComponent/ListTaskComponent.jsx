@@ -69,7 +69,7 @@ class ListTaskComponent extends Component {
                                              <td>
                                                  <button onClick={event => window.location.href='/add-task/'+task.id} className="btn btn-info">Update </button>
                                                  <button style={{marginLeft: "10px"}} onClick={() => this.deleteTask(task.id)} className="btn btn-danger">Delete </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.viewTask(task.id)} className="btn btn-info">View </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={event => window.location.href='/view-task/'+task.id} className="btn btn-info">View </button>
                                              </td>
                                         </tr>
                                     )

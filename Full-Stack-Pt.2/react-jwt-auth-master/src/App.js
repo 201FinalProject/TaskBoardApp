@@ -21,6 +21,7 @@ import HistoryTask from "./common/HistoryTask/HistoryTask";
 import HistoryPage from "./Pages/History/HistoryPage";
 import CreateTaskComponent from "./components/Task/CreateTaskComponent/CreateTaskComponent";
 import ListTaskComponent from "./components/Task/ListTaskComponent/ListTaskComponent";
+import ViewTaskComponent from "./components/Task/ViewTaskComponent/ViewTaskComponent";
 import Chat from "./Pages/ChatPage/Chat";
 
 class App extends Component {
@@ -120,6 +121,7 @@ class App extends Component {
             <Route path="/GroupHome" component={GroupHome}/>
             <Route path="/history" component={HistoryPage}/>
             <Route path="/add-task/:id" component={CreateTaskComponent}/>
+            <Route path="/view-task/:id" component={ViewTaskComponent}/>
             <Route path = "/Chat" component = {Chat }></Route>
           </Switch>
         </div>
