@@ -42,21 +42,19 @@ class ListTaskComponent extends Component {
     render() {
         return (
             <div>
-                 
+                 <h2 className="text-center">Tasks List</h2>
                  <div className = "row">
-                    <button className="btn btn-primary" id="addTaskButton" onClick={event => window.location.href='/add-task/_add'} id="AddTaskBtn"> Add Task</button>
+                    <button className="btn btn-primary" id="AddTaskBtn" onClick={event => window.location.href='/add-task/_add'}> Add Task</button>
                  </div>
                  <br></br>
-
                  <div>
                         <table id="listTable" >
                             <thead>
                                 <tr style={{borderTop: "solid 1px #6A6A6A", borderLeft: "solid 1px black"}}>
                                     <th> Completed?</th>
                                     <th> Task Name</th>
-                                    <th> Task Assigned To</th>
-                                    <th> Task Assigned By</th>
-                                    
+                                    <th> Task Completed By</th>
+                                    <th> Task Description</th>
                                     <th> Task Difficulty</th>
                                     <th> Task Completion Date</th>
                                     <th> Actions</th>
@@ -72,14 +70,13 @@ class ListTaskComponent extends Component {
                                              </td>
                                              <td> {task.taskName} </td>   
                                              <td> {task.completedBy}</td>
-                                             <td> {task.assignedBy}</td>
-                                             
+                                             <td> {task.description}</td>
                                              <td> {task.difficulty}</td>
                                              <td> {task.completionDate}</td>
                                              <td>
-                                                 <button onClick={event => window.location.href='/add-task/'+task.id} className="btn btn-info" id="btn123">Update </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={() => this.deleteTask(task.id)} className="btn btn-danger" id="btn234">Delete </button>
-                                                 <button style={{marginLeft: "10px"}} onClick={event => window.location.href='/add-task/'+task.id} className="btn btn-info" id="btn123">View </button>
+                                                 <button onClick={event => window.location.href='/add-task/'+task.id} id="btn123" className="btn btn-info">Update </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={() => this.deleteTask(task.id)} id="btn234" className="btn btn-danger">Delete </button>
+                                                 <button style={{marginLeft: "10px"}} onClick={ () => this.viewTask(task.id)} id="btn123" className="btn btn-info">View </button>
                                              </td>
                                         </tr>
                                     )

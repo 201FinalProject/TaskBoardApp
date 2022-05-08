@@ -72,7 +72,9 @@ class App extends Component {
       <div id="BIGDIV">
         <nav id="entirebar">
           {currentUser ? (
-            <Link to={"/home"} id="logo">Vision</Link>
+            <span >
+              <Link to={"/home"} id="logo">Vision</Link>
+            </span>
           ) : (
             <Link to={"/login"} id="logo">Vision</Link>
           )}
@@ -80,7 +82,7 @@ class App extends Component {
             <li>
               {currentUser ? (
                 <Link to={"/login"} className="login-button" onClick={this.logOut}>
-                  Logout
+                  Logout, {currentUser.username}
                 </Link>
               ) : (
                 <Link to={"/login"} className="login-button">
