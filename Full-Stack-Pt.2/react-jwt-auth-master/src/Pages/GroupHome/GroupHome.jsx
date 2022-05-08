@@ -8,10 +8,7 @@ import './GroupHome.css';
 export default function GroupHome(){
     return(
         <div id="mainHome">
-            <div >
-                <button id="historyButton">History</button>
-                <button id="addTaskButton"><FontAwesomeIcon icon={faPlus} /></button>
-            </div>
+            
             <div>
                 <ListTaskComponent/>
             </div>
