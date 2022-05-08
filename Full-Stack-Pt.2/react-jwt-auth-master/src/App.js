@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Switch, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import "./Navbar.css";
 
 import AuthService from "./services/auth.service";
 
@@ -15,6 +16,12 @@ import BoardAdmin from "./components/board-admin.component";
 
 // import AuthVerify from "./common/auth-verify";
 import EventBus from "./common/EventBus";
+import GroupHome from "./Pages/GroupHome/GroupHome";
+import HistoryTask from "./common/HistoryTask/HistoryTask";
+import HistoryPage from "./Pages/History/HistoryPage";
+import CreateTaskComponent from "./components/Task/CreateTaskComponent";
+import ListTaskComponent from "./components/Task/ListTaskComponent/ListTaskComponent";
+import Chat from "./Pages/ChatPage/Chat";
 
 class App extends Component {
   constructor(props) {
@@ -51,9 +58,9 @@ class App extends Component {
   logOut() {
     AuthService.logout();
     this.setState({
+      currentUser: undefined,
       showModeratorBoard: false,
       showAdminBoard: false,
-      currentUser: undefined,
     });
   }
 
@@ -61,71 +68,44 @@ class App extends Component {
     const { currentUser, showModeratorBoard, showAdminBoard } = this.state;
 
     return (
-      <div>
-        <nav className="navbar navbar-expand navbar-dark bg-dark">
-          <Link to={"/"} className="navbar-brand">
-            bezKoder
-          </Link>
-          <div className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/home"} className="nav-link">
-                Home
-              </Link>
-            </li>
-
-            {showModeratorBoard && (
-              <li className="nav-item">
-                <Link to={"/mod"} className="nav-link">
-                  Moderator Board
-                </Link>
-              </li>
-            )}
-
-            {showAdminBoard && (
-              <li className="nav-item">
-                <Link to={"/admin"} className="nav-link">
-                  Admin Board
-                </Link>
-              </li>
-            )}
-
-            {currentUser && (
-              <li className="nav-item">
-                <Link to={"/user"} className="nav-link">
-                  User
-                </Link>
-              </li>
-            )}
-          </div>
-
+      <div id="BIGDIV">
+        <nav id="entirebar">
           {currentUser ? (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/profile"} className="nav-link">
-                  {currentUser.username}
-                </Link>
-              </li>
-              <li className="nav-item">
-                <a href="/login" className="nav-link" onClick={this.logOut}>
-                  LogOut
-                </a>
-              </li>
-            </div>
+            <Link to={"/home"} id="logo">Vision</Link>
           ) : (
-            <div className="navbar-nav ml-auto">
-              <li className="nav-item">
-                <Link to={"/login"} className="nav-link">
+            <Link to={"/login"} id="logo">Vision</Link>
+          )}
+          <ul>
+            <li>
+              {currentUser ? (
+                <Link to={"/login"} className="login-button" onClick={this.logOut}>
+                  Logout
+                </Link>
+              ) : (
+                <Link to={"/login"} className="login-button">
                   Login
                 </Link>
-              </li>
-
-              <li className="nav-item">
-                <Link to={"/register"} className="nav-link">
-                  Sign Up
-                </Link>
-              </li>
-            </div>
-          )}
+              )}
+            </li>
+            <li>
+              <Link to={"/history"} className="history-button">
+                History
+              </Link>
+            </li>
+            <li>
+              <Link to={"add-task/_add"}>
+                Create Task
+              </Link>
+            </li>
+            <li>
+              <Link to="/Chat" target="_blank">Global Chat</Link>
+            </li>
+            <li>
+              <Link to="/GroupHome" className="home-button">
+                Group Home
+              </Link>
+            </li>
+          </ul>
         </nav>
 
         <div className="container mt-3">
@@ -136,8 +116,15 @@ class App extends Component {
             <Route exact path="/profile" component={Profile} />
             <Route path="/user" component={BoardUser} />
             <Route path="/mod" component={BoardModerator} />
-            <Route path="/admin" component={BoardAdmin} />
+            <Route path="/admin" component={BoardAdmin} />\
+            <Route path="/GroupHome" component={GroupHome}/>
+            <Route path="/history" component={HistoryPage}/>
+            <Route path="/add-task/:id" component={CreateTaskComponent}/>
+            <Route path = "/Chat" component = {Chat }></Route>
           </Switch>
+          <ListTaskComponent/>
+        </div>
+        <div>
         </div>
 
         { /*<AuthVerify logOut={this.logOut}/> */ }

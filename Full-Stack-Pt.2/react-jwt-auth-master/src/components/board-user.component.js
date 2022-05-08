@@ -26,7 +26,7 @@ export default class BoardUser extends Component {
               error.response.data &&
               error.response.data.message) ||
             error.message ||
-            error.toString()
+            error.toString()  
         });
 
         if (error.response && error.response.status === 401) {

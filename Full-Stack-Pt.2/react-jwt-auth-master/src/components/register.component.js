@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import Form from "react-validation/build/form";
-import Input from "react-validation/build/input";
+import Input, { input } from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
 
 import AuthService from "../services/auth.service";
+import "./Register.css"
+import PageHeader from "../common/PageHeader/PageHeader";
 
 const required = value => {
   if (!value) {
@@ -122,14 +124,9 @@ export default class Register extends Component {
 
   render() {
     return (
-      <div className="col-md-12">
-        <div className="card card-container">
-          <img
-            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-            alt="profile-img"
-            className="profile-img-card"
-          />
-
+      <div id="MainMain">
+        <div  id="Main">
+          <PageHeader name="Register"></PageHeader>
           <Form
             onSubmit={this.handleRegister}
             ref={c => {
@@ -138,44 +135,45 @@ export default class Register extends Component {
           >
             {!this.state.successful && (
               <div>
-                <div className="form-group">
-                  <label htmlFor="username">Username</label>
+                <div className="inputsContainer">
                   <Input
                     type="text"
-                    className="form-control"
-                    name="username"
+                    className="test"
+                    id="Username"
+                    name="Username"
+                    placeholder="Username"
                     value={this.state.username}
                     onChange={this.onChangeUsername}
                     validations={[required, vusername]}
                   />
-                </div>
 
-                <div className="form-group">
-                  <label htmlFor="email">Email</label>
                   <Input
-                    type="text"
-                    className="form-control"
+                    type="email"
+                    className="test"
+                    id="Email"
                     name="email"
+                    placeholder="Email"
                     value={this.state.email}
                     onChange={this.onChangeEmail}
                     validations={[required, email]}
                   />
-                </div>
 
-                <div className="form-group">
-                  <label htmlFor="password">Password</label>
                   <Input
                     type="password"
-                    className="form-control"
+                    className="test"
                     name="password"
+                    id="Pass"
+                    placeholder="Password"
                     value={this.state.password}
                     onChange={this.onChangePassword}
                     validations={[required, vpassword]}
                   />
                 </div>
 
-                <div className="form-group">
-                  <button className="btn btn-primary btn-block">Sign Up</button>
+                <div className="container">
+                  <div className>
+                    <button className="button" name="Register">Create Account</button>
+                  </div>
                 </div>
               </div>
             )}

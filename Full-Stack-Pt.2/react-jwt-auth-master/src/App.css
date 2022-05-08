@@ -30,3 +30,8 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+#BIGDIV {
+  background-image: url("./LongBackground.png");
+  background-size: cover;
+}
