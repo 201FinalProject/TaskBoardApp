@@ -42,6 +42,7 @@ class ListTaskComponent extends Component {
                     <button className="btn btn-primary" id="addTaskButton" onClick={event => window.location.href='/add-task/_add'}> Add Task</button>
                  </div>
                  <br></br>
+
                  <div>
                         <table id="listTable" >
                             <thead>
