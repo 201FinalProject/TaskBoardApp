@@ -1,0 +1,19 @@
+#headID {
+    display: flex;
+    justify-content: center;
+    
+}
+
+#PHeader {
+    height: 61px;
+    
+    font-family: 'DM Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 62px;
+    text-align: center;
+    /*margin-left: 42%;*/
+
+    color: #000000;
+}

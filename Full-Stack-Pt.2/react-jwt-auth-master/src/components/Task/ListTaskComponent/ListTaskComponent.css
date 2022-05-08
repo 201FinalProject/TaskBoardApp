@@ -1,0 +1,18 @@
+#listTable{
+    width: 100%;
+    margin: auto;
+}
+
+td, th{
+    border-right: solid 1px black;
+    text-align: center;
+}
+
+tr{
+    border-bottom: solid 1px #6A6A6A;
+    text-align: center;
+}
+
+#addTaskButton {
+    margin-left: 1032px;
+}
