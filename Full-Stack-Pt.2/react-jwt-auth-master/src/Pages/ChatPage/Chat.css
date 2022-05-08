@@ -1,0 +1,162 @@
+#BIGDIV {
+    background-image: url("./LongBackground.png");
+    background-size: cover;
+  }
+  
+  .App {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+  }
+  h1 {
+    border: 5px solid black;
+    background-image: url("./LongBackground.png");
+    background-size: cover;
+  }
+  
+  .App header {
+    background: transparent;
+    height: 12vh;
+    min-height: 70px;
+    line-height: 100px;
+    color: rgb(113, 38, 38);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    display: block;
+    align-items: center;
+    justify-content: space-center;
+    z-index: 99;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .App section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: white(40, 37, 53);
+  }
+  
+  main {
+    height: 100vh;
+    margin-top: 10vh;
+    overflow-y: scroll;
+    display: fixed;
+    flex-direction: column;
+  }
+  
+  main::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  main::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  main::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
+  
+  #form1 {
+    height: 10vh;
+    bottom: 0;
+    background-color: rgb(24, 23, 23);
+    width: 100%;
+    display: flex;
+    font-size: 1.5rem;
+  }
+  
+  #form1 button {
+    width: 20%;
+    background-color: rgb(56, 56, 143);
+  }
+  
+  
+  #input1 {
+    line-height: 2;
+    width: 100%;
+    font-size: 2rem;
+    background: rgb(112, 103, 103);
+    color: white;
+    outline: none;
+    border: 1px solid black;;
+    padding: 0 10px;
+  }
+  
+  button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+  .sign-in, .sign-out{
+    color: #282c34;
+    background: white;
+    max-width: 400px;
+    margin: auto;
+    background-color: #738ab7; /* Green */
+    border: 5px solid black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 1.25rem;
+  }
+
+  .sign-in {
+    margin-top: 0px;
+  }
+
+  .sign-out {
+    height: 70px;
+    line-height: 35px;
+  }
+  
+  ul, li {
+    text-align: left;
+    list-style: none;
+  }
+  
+  .p1 {
+    max-width: 500px;
+    margin-bottom: 12px;
+    line-height: 30px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    position: relative;
+    color: white;
+    text-align: center;
+  }
+  
+  .message {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sent {
+    flex-direction: row-reverse;
+  }
+  #send {
+    border: 1px solid black;
+    background-color: rgb(184, 124, 124);
+  }
+  
+  .sent p {
+    color: white;
+    background: #0b93f6;
+    align-self: flex-end;
+  }
+  .received p {
+    background: #c9e3cdc6;
+    color: black;
+  }
+  
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 2px 5px;
+  }

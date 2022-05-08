@@ -48,6 +48,8 @@ public class UserController {
 		return ResponseEntity.ok(User);
 	}
 	
+	@GetMapping (value= {"/Login/{id}")
+	
 	// update User rest api
 	
 	@PutMapping(value = { "/Users/{id}", "/Register/{id}" })
