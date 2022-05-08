@@ -16,7 +16,8 @@ class CreateTaskComponent extends Component {
             description: '',
             difficulty: '',
             completionDate: '',
-            groupCode:''
+            groupCode:'',
+            completed: false
         }
         this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
         this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
@@ -35,7 +36,8 @@ class CreateTaskComponent extends Component {
                     description: task.description,
                     difficulty: task.difficulty,
                     completionDate: task.completionDate,
-                    groupCode: task.groupCode
+                    groupCode: task.groupCode,
+                    completed: task.completed
                 });
                 this.deleteTask = this.deleteTask.bind(this);
             });
@@ -50,7 +52,8 @@ class CreateTaskComponent extends Component {
             description: this.state.description, 
             difficulty: this.state.difficulty, 
             completionDate: this.state.completionDate, 
-            groupCode: this.state.groupCode
+            groupCode: this.state.groupCode,
+            completed: this.state.completed
         };
         console.log('task => ' + JSON.stringify(task));
 

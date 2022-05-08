@@ -11,6 +11,7 @@ class ListTaskComponent extends Component {
         }
         this.editTask = this.editTask.bind(this);
         this.deleteTask = this.deleteTask.bind(this);
+        this.markCompleted = this.markCompleted.bind(this);
     }
 
     deleteTask(id){
@@ -24,6 +25,10 @@ class ListTaskComponent extends Component {
     editTask(id){
 
         //this.props.history.push(`/add-task/${id}`);
+    }
+    markCompleted(id, task){
+        TaskService.markTaskCompleted(task, id);
+        console.log(task.completed);
     }
 
     componentDidMount(){
@@ -46,6 +51,7 @@ class ListTaskComponent extends Component {
                         <table id="listTable" >
                             <thead>
                                 <tr style={{borderTop: "solid 1px #6A6A6A", borderLeft: "solid 1px black"}}>
+                                    <th> Completed?</th>
                                     <th> Task Name</th>
                                     <th> Task Completed By</th>
                                     <th> Task Description</th>
@@ -59,6 +65,9 @@ class ListTaskComponent extends Component {
                                     this.state.tasks.map(
                                         task => 
                                         <tr key = {task.id} style={{borderLeft: "solid 1px black"}}>
+                                             <td> 
+                                                 <input type="checkbox" value={task.completed} onChange={this.markCompleted(task.id, task)}/>
+                                             </td>
                                              <td> {task.taskName} </td>   
                                              <td> {task.completedBy}</td>
                                              <td> {task.description}</td>
