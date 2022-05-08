@@ -1,31 +1,42 @@
 import React, { Component } from 'react'
-import GroupSelect from "../../components/GroupSelectButton/GroupSelect";
-import PageHeader from "../../components/PageHeader/PageHeader";
 import './HomePage.css';
 import "@fontsource/sora";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ListTaskComponent from '../../components/Task/ListTaskComponent.jsx';
-import HomePageService from "../../services/HomePageService";
+import ListTaskComponent from '../../components/Task/ListTaskComponent/ListTaskComponent';
+import UserService from "../../services/user.service";
 
 
 class HomePage extends Component{
     constructor(props) {
         super(props)
         this.state = {
-            groups: []
+            groups: [],
+            content: ""
         }
     }
-     componentDidMount(){
-        HomePageService.getGroups().then((res) => {
-            this.setState({ groups: res.data});
-        });
-    }
+    componentDidMount() {
+        UserService.getPublicContent().then(
+          response => {
+            this.setState({
+              content: response.data
+            });
+          },
+          error => {
+            this.setState({
+              content:
+                (error.response && error.response.data) ||
+                error.message ||
+                error.toString()
+            });
+          }
+        );
+      }
 
     render(){
         return(
             <div id="mainHome">
-                <PageHeader name="Home"></PageHeader>
+                
                 <div>
                     <div id="headerDiv">
                         <h2 id="dividerHeader">My Tasks</h2>
@@ -35,7 +46,7 @@ class HomePage extends Component{
                 <h2 style={{height: "30px"}}></h2>
                 <ListTaskComponent />
                 <h2 id="temp"></h2>
-                <div id="mainDiv">
+                {/* <div id="mainDiv">
                     <div id="headerDiv">
                         <h2 id="dividerHeader">Groups</h2>
                     </div>
@@ -52,7 +63,7 @@ class HomePage extends Component{
                         group => 
                         <GroupSelect key={group.id} code={group.groupCode}></GroupSelect>
                     )
-                }       
+                }        */}
             </div>
         );
     }

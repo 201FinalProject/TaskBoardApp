@@ -37,7 +37,7 @@ function Chat() {
     <div id="BIGDIV">
       <div className="App">
         <header>
-          <h1>Global Chat</h1>
+          <h1 id="choreBoardChat">ChoreBoard Chat</h1>
           <SignOut />
         </header>
 

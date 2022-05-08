@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import ListTaskComponent from "./Task/ListTaskComponent/ListTaskComponent.jsx";
 import UserService from "../services/user.service";
 
 export default class Home extends Component {
@@ -33,8 +33,11 @@ export default class Home extends Component {
     return (
       <div className="container">
         <header className="jumbotron">
-          <h3>{this.state.content}</h3>
+          <h3>My Tasks</h3>
         </header>
+        <div>
+          <ListTaskComponent />
+        </div>
       </div>
     );
   }

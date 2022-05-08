@@ -123,8 +123,7 @@ class CreateTaskComponent extends Component {
                 <div className="form-group line">
                     <label id="title" for="title-id">Title: </label>
                     <input type="text" className="form" id="title-id" name="title" placeholder="Task Name" value={this.state.taskName} onChange={this.changeTaskNameHandler}></input>
-                    <button type="button" className = "save" onClick={this.saveOrUpdateTask}>Save</button>
-                    <button type="button" className= "cancel" onClick={this.cancel.bind(this)} >Cancel</button>
+                    
                 </div>
                 <div className="form-group line">
                     <label id="member" for="member-id">Member: </label>
@@ -167,7 +166,9 @@ class CreateTaskComponent extends Component {
                         activeColor="#ffd700"
                     />
                     </label>
-                    <button type="button" onClick={ () => this.deleteTask(this.id)} className="delete">Delete Task</button>
+                    <button type="button" className = "save" onClick={this.saveOrUpdateTask}>Save</button>
+                    <button type="button" className= "cancel" onClick={this.cancel.bind(this)} >Cancel</button>
+                    <button type="button" className = "delete" onClick={ () => this.deleteTask(this.id)} className="delete">Delete Task</button>
                 </div>
                 </form>
             </div>
