@@ -15,9 +15,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bezkoder.springjwt.models.HistoryTask;
 import com.bezkoder.springjwt.models.Task;
 import com.bezkoder.springjwt.repository.TaskRepository;
 import com.bezkoder.springjwt.exceptions.ResourceNotFoundException;
+import com.bezkoder.springjwt.repository.HistoryRepository;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -26,6 +28,9 @@ public class TaskController {
 
 	@Autowired
 	private TaskRepository TaskRepository;
+	
+	@Autowired
+	private HistoryRepository historyRepository;
 
 	// get all Tasks
 	@GetMapping(value = {"/Tasks", "/History"})
@@ -53,7 +58,7 @@ public class TaskController {
 	// update Task rest api
 	
 	
-	@PutMapping(value = { "/Tasks/{id}", "/History/{id}" })
+	@PutMapping(value = { "/Tasks/{id}"})
 	public ResponseEntity<Task> updateTask(@PathVariable Long id, @RequestBody Task TaskDetails) {
 		Task Task = TaskRepository.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
@@ -71,6 +76,25 @@ public class TaskController {
 
 		Task updatedTask = TaskRepository.save(Task);
 		return ResponseEntity.ok(updatedTask);
+	}
+	
+	@PutMapping(value = "/history/{id}")
+	public ResponseEntity<Task> markCompleted(@PathVariable Long id, @RequestBody Task TaskDetails){
+		Task Task = TaskRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
+		
+		Task.setTaskName(TaskDetails.getTaskName());
+		Task.setCompletedBy(TaskDetails.getCompletedBy());
+		Task.setDescription(TaskDetails.getDescription());
+		Task.setDifficulty(TaskDetails.getDifficulty());
+		Task.setCompletionDate(TaskDetails.getCompletionDate());
+		Task.setGroupCode(TaskDetails.getGroupCode());
+		Task.setCompleted(TaskDetails.isCompleted());
+		
+		Task completedTask = TaskRepository.save(Task);
+		HistoryTask x = new HistoryTask(completedTask);
+		historyRepository.save(x);
+		return ResponseEntity.ok(completedTask);
 	}
 	 
 	

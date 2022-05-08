@@ -23,6 +23,10 @@ class TaskService {
     deleteTask(taskId){
         return axios.delete(TASK_API_BASE_URL + '/' + taskId);
     }
+
+    changeTaskCompletion(task, taskId){
+        return axios.put("http://localhost:8080/api/auth/history/" + taskId, task);
+    }
 }
 
 export default new TaskService()

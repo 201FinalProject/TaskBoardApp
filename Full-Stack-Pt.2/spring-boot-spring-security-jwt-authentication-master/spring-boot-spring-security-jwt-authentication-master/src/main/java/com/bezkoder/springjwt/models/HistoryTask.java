@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tasks")
-public class Task {
+@Table(name = "History")
+public class HistoryTask {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +20,6 @@ public class Task {
 
 	@Column(name = "completedBy")
 	private String completedBy;
-	
-	@Column(name = "assignedBy")
-	private String assignedBy;
 	
 	@Column(name = "description")
 	private String description;
@@ -40,20 +37,28 @@ public class Task {
     private boolean completed = false;
 	
     //constructors
-	public Task() {
+	public HistoryTask() {
 		
 	}
 	
-	public Task(String taskName, String completedBy, String assignedBy, String description, double difficulty, String completionDate, String groupCode, boolean completed) {
-		super();
+	public HistoryTask(String taskName, String completedBy, String description, double difficulty, String completionDate, String groupCode, boolean completed) {
 		this.taskName = taskName;
 		this.completedBy = completedBy;
-		this.assignedBy = assignedBy;
 		this.description = description;
 		this.difficulty = difficulty;
-        	this.completionDate = completionDate;
-        	this.groupCode = groupCode;
-        	this.completed = completed;
+        this.completionDate = completionDate;
+        this.groupCode = groupCode;
+        this.completed = completed;
+	}
+	
+	public HistoryTask(Task x) {
+		this.taskName = x.getTaskName();
+		this.completedBy = x.getCompletedBy();
+		this.description = x.getDescription();
+		this.difficulty = x.getDifficulty();
+		this.completionDate = x.getCompletionDate();
+		this.groupCode = x.getGroupCode();
+		this.completed = x.isCompleted();
 	}
 	
 	public boolean isCompleted() {
@@ -81,13 +86,6 @@ public class Task {
 	}
 	public void setCompletedBy(String completedBy) {
 		this.completedBy = completedBy;
-	}
-	
-	public String getAssignedBy() {
-		return assignedBy;
-	}
-	public void setAssignedBy(String assignedBy) {
-		this.assignedBy = assignedBy;
 	}
 	
 	public String getDescription() {
