@@ -21,6 +21,9 @@ public class Task {
 	@Column(name = "completedBy")
 	private String completedBy;
 	
+	@Column(name = "assignedBy")
+	private String assignedBy;
+	
 	@Column(name = "description")
 	private String description;
 	
@@ -45,6 +48,7 @@ public class Task {
 		super();
 		this.taskName = taskName;
 		this.completedBy = completedBy;
+		this.assignedBy = assignedBy;
 		this.description = description;
 		this.difficulty = difficulty;
         this.completionDate = completionDate;
@@ -77,6 +81,13 @@ public class Task {
 	}
 	public void setCompletedBy(String completedBy) {
 		this.completedBy = completedBy;
+	}
+	
+	public String getAssignedBy() {
+		return assignedBy;
+	}
+	public void setAssignedBy(String assignedBy) {
+		this.assignedBy = assignedBy;
 	}
 	
 	public String getDescription() {

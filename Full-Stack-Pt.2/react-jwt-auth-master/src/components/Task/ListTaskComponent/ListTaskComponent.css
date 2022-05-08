@@ -1,5 +1,5 @@
 #listTable{
-    width: 76%;
+    width: 100%;
     margin: auto;
 }
 
@@ -14,5 +14,5 @@ tr{
 }
 
 #addTaskButton {
-    margin-left: 240px;
+    margin-left: 1032px;
 }

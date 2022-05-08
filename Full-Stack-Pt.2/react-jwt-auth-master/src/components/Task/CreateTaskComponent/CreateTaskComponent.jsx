@@ -13,6 +13,7 @@ class CreateTaskComponent extends Component {
             id: this.props.match.params.id,
             taskName: '',
             completedBy: '',
+            assignedBy: '',
             description: '',
             difficulty: '',
             completionDate: '',
@@ -21,6 +22,7 @@ class CreateTaskComponent extends Component {
         }
         this.changeTaskNameHandler = this.changeTaskNameHandler.bind(this);
         this.changeCompletedByHandler = this.changeCompletedByHandler.bind(this);
+        this.changeAssignedBy = this.changeAssignedBy.bind(this);
         this.saveOrUpdateTask = this.saveOrUpdateTask.bind(this);
     }
 
@@ -33,6 +35,7 @@ class CreateTaskComponent extends Component {
                 this.setState({
                     taskName: task.taskName,
                     completedBy: task.completedBy,
+                    assignedBy: task.assignedBy,
                     description: task.description,
                     difficulty: task.difficulty,
                     completionDate: task.completionDate,
@@ -49,6 +52,7 @@ class CreateTaskComponent extends Component {
         let task = {
             taskName: this.state.taskName, 
             completedBy: this.state.completedBy, 
+            assignedBy: this.state.assignedBy,
             description: this.state.description, 
             difficulty: this.state.difficulty, 
             completionDate: this.state.completionDate, 
@@ -83,6 +87,10 @@ class CreateTaskComponent extends Component {
         this.setState({completedBy: event.target.value});
     }
 
+    changeAssignedBy= (event) => {
+        this.setState({assignedBy: event.target.value});
+    }
+
     changeDescriptionHandler= (event) => {
         this.setState({description: event.target.value});
     }
@@ -112,19 +120,23 @@ class CreateTaskComponent extends Component {
     }
     render() {
         return(
+            
             <div class = "main">
+                
                 <PageHeader  name = {this.getTitle() ? "Add Task" : "Update Task"}/>
                 <form action="" method="">
                 <div className="form-group line">
                     <label id="title" for="title-id">Title: </label>
                     <input type="text" className="form" id="title-id" name="title" placeholder="Task Name" value={this.state.taskName} onChange={this.changeTaskNameHandler}></input>
-                    <button type="button" className = "save" onClick={this.saveOrUpdateTask}>Save</button>
-                    <button type="button" className= "cancel" onClick={this.cancel.bind(this)} >Cancel</button>
+                    
                 </div>
                 <div className="form-group line">
-                    <label id="member" for="member-id">Member: </label>
-                    <input type="text" className="form" id="member-id" name="member" placeholder="Completed By" 
+                    <label id="member" for="member-id">Assigned To: </label>
+                    <input type="text" className="form" id="member-id" name="member" placeholder="Add Member" 
                         value={this.state.completedBy} onChange={this.changeCompletedByHandler}></input>
+                    <label id="member" for="member-id">Assigned By: </label>
+                    <input type="text" className="form" id="member-id" name="member" placeholder="Add Member" 
+                        value={this.state.assignedBy} onChange={this.changeAssignedBy}></input>
                 </div>
                 <div className="form-group line">
                     <label id="dated" for="date-id">Due Date: </label>
@@ -159,7 +171,9 @@ class CreateTaskComponent extends Component {
                         activeColor="#ffd700"
                     />
                     </label>
-                    <button type="button" onClick={ () => this.deleteTask(this.id)} className="delete">Delete Task</button>
+                    <button type="button" className = "save" onClick={this.saveOrUpdateTask}>Save</button>
+                    <button type="button" className= "cancel" onClick={this.cancel.bind(this)} >Cancel</button>
+                    <button type="button" className = "delete" onClick={ () => this.deleteTask(this.id)} className="delete">Delete Task</button>
                 </div>
                 </form>
             </div>

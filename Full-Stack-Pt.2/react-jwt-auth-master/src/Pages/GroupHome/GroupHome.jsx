@@ -1,17 +1,19 @@
 import React from 'react';
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import ListTaskComponent from "../../components/Task/ListTaskComponent"
+import ListTaskComponent from "../../components/Task/ListTaskComponent/ListTaskComponent"
+import './GroupHome.css'; 
+ 
 
 export default function GroupHome(){
     return(
-        <div>
+        <div id="mainHome">
             <div >
                 <button id="historyButton">History</button>
                 <button id="addTaskButton"><FontAwesomeIcon icon={faPlus} /></button>
             </div>
             <div>
-                {/* <ListTaskComponent/> */}
+                <ListTaskComponent/>
             </div>
         </div>
     );

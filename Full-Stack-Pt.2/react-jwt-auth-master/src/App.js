@@ -6,9 +6,9 @@ import "./Navbar.css";
 
 import AuthService from "./services/auth.service";
 
-import Login from "./components/login.component";
+import Login from "./components/login.component.jsx";
 import Register from "./components/register.component";
-import Home from "./components/home.component";
+import HomePage from "./Pages/HomePage/HomePage";
 import Profile from "./components/profile.component";
 import BoardUser from "./components/board-user.component";
 import BoardModerator from "./components/board-moderator.component";
@@ -21,6 +21,7 @@ import HistoryTask from "./common/HistoryTask/HistoryTask";
 import HistoryPage from "./Pages/History/HistoryPage";
 import CreateTaskComponent from "./components/Task/CreateTaskComponent/CreateTaskComponent";
 import ListTaskComponent from "./components/Task/ListTaskComponent/ListTaskComponent";
+import ViewTaskComponent from "./components/Task/ViewTaskComponent/ViewTaskComponent";
 import Chat from "./Pages/ChatPage/Chat";
 
 class App extends Component {
@@ -98,10 +99,10 @@ class App extends Component {
               </Link>
             </li>
             <li>
-              <Link to="/Chat" target="_blank">Global Chat</Link>
+              <Link to="/Chat" t>Global Chat</Link>
             </li>
             <li>
-              <Link to="/GroupHome" className="home-button">
+              <Link to="/HomePage" className="home-button">
                 Group Home
               </Link>
             </li>
@@ -110,7 +111,7 @@ class App extends Component {
 
         <div className="container mt-3">
           <Switch>
-            <Route exact path={["/", "/home"]} component={Home} />
+            <Route exact path={["/", "/HomePage", "/home"]} component={HomePage} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/profile" component={Profile} />
@@ -120,9 +121,9 @@ class App extends Component {
             <Route path="/GroupHome" component={GroupHome}/>
             <Route path="/history" component={HistoryPage}/>
             <Route path="/add-task/:id" component={CreateTaskComponent}/>
+            <Route path="/view-task/:id" component={ViewTaskComponent}/>
             <Route path = "/Chat" component = {Chat }></Route>
           </Switch>
-          <ListTaskComponent/>
         </div>
         <div>
         </div>
