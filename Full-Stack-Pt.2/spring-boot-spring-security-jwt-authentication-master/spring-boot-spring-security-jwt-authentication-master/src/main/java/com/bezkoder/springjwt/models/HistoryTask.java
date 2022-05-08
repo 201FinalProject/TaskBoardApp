@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tasks")
-public class Task {
+@Table(name = "History")
+public class HistoryTask {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,15 +34,14 @@ public class Task {
 	private String groupCode;
     
     @Column(name = "completed")
-    private boolean completed = false;
+    private boolean completed;
 	
     //constructors
-	public Task() {
+	public HistoryTask() {
 		
 	}
 	
-	public Task(String taskName, String completedBy, String description, double difficulty, String completionDate, String groupCode, boolean completed) {
-		super();
+	public HistoryTask(String taskName, String completedBy, String description, double difficulty, String completionDate, String groupCode, boolean completed) {
 		this.taskName = taskName;
 		this.completedBy = completedBy;
 		this.description = description;

@@ -71,6 +71,23 @@ public class TaskController {
 		Task updatedTask = TaskRepository.save(Task);
 		return ResponseEntity.ok(updatedTask);
 	}
+	
+	@PutMapping(value = "/Tasks/completed/{id}")
+	public ResponseEntity<Task> markCompleted(@PathVariable Long id, @RequestBody Task TaskDetails){
+		Task Task = TaskRepository.findById(id)
+				.orElseThrow(() -> new ResourceNotFoundException("Task not exist with id :" + id));
+		
+		Task.setTaskName(TaskDetails.getTaskName());
+		Task.setCompletedBy(TaskDetails.getCompletedBy());
+		Task.setDescription(TaskDetails.getDescription());
+		Task.setDifficulty(TaskDetails.getDifficulty());
+		Task.setCompletionDate(TaskDetails.getCompletionDate());
+		Task.setGroupCode(TaskDetails.getGroupCode());
+		Task.setCompleted(true);
+		
+		Task completedTask = TaskRepository.save(Task);
+		return ResponseEntity.ok(completedTask);
+	}
 	 
 	
 	// delete Task rest api
