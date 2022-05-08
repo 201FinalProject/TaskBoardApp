@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ReactStars from "react-rating-stars-component";
-import PageHeader from '../../common/PageHeader/PageHeader';
-import TaskService from '../../services/TaskService';
+import PageHeader from '../../../common/PageHeader/PageHeader';
+import TaskService from '../../../services/TaskService';
 import "./TaskCreate.css"
 
 class CreateTaskComponent extends Component {

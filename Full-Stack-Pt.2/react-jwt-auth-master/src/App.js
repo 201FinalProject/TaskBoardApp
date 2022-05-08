@@ -19,7 +19,7 @@ import EventBus from "./common/EventBus";
 import GroupHome from "./Pages/GroupHome/GroupHome";
 import HistoryTask from "./common/HistoryTask/HistoryTask";
 import HistoryPage from "./Pages/History/HistoryPage";
-import CreateTaskComponent from "./components/Task/CreateTaskComponent";
+import CreateTaskComponent from "./components/Task/CreateTaskComponent/CreateTaskComponent";
 import ListTaskComponent from "./components/Task/ListTaskComponent/ListTaskComponent";
 import Chat from "./Pages/ChatPage/Chat";
 
