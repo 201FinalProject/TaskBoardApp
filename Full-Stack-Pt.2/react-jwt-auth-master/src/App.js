@@ -93,6 +93,13 @@ class App extends Component {
             <li>
               <Link to="/Chat" t>Global Chat</Link>
             </li>
+            <li>
+              {currentUser ? (
+                <Link to={"/home"} >Home</Link>
+            ) : (
+              <Link to={"/login"}>Home</Link>
+            )}
+            </li>
           </ul>
         </nav>
 

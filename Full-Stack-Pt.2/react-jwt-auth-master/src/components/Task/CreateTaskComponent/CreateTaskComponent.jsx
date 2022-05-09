@@ -77,6 +77,7 @@ class CreateTaskComponent extends Component {
         TaskService.deleteTask(id).then( res => {
             this.setState({tasks: this.state.tasks.filter(task => task.id !== id)});
         });
+        this.props.history.push('/HomePage');
     }
 
     changeTaskNameHandler= (event) => {
@@ -173,7 +174,6 @@ class CreateTaskComponent extends Component {
                     </label>
                     <button type="button" className = "save" onClick={this.saveOrUpdateTask}>Save</button>
                     <button type="button" className= "cancel" onClick={this.cancel.bind(this)} >Cancel</button>
-                    <button type="button" className = "delete" onClick={ () => this.deleteTask(this.id)} className="delete">Delete Task</button>
                 </div>
                 </form>
             </div>
