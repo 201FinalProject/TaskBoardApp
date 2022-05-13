@@ -1,4 +1,4 @@
-# TaskBoard-CSCI201FinalProject- 
+# TaskBoard-CSCI201FinalProject
 In order to deploy the application, follow the text instructions below:
 1. In a fresh Terminal, navigate to the folder where you want to store the project. Copy the SSH Code from https://github.com/201FinalProject/CSCI201FinalProject and   v  clone the repository. Alternatively, open the ZIP.
 2. Open the TaskBoard.sql file in MySQL, located inside the root directory of the project. Run the SQL server, then run the given script. This will create the database for the project.
