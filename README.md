@@ -2,6 +2,12 @@
 
 This project is a web application that allows users to join other groups and assign tasks to members of the group. Once logged in, they can use a join code to join a specific group. At that point, members can assign tasks to members. Each task has a title, assignee, description, due date, and difficulty. 
 
+## Example Pages <br>
+
+![Alt text](/Example-Pages/HomePage.png)
+![Alt text](/Example-Pages/GroupHomePage.png)
+![Alt text](/Example-Pages/LoginPage.png)
+
 ## Deployment Instructions <br>
 
 In order to deploy the application, follow the text instructions below:
