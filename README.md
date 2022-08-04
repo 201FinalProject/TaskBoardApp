@@ -4,7 +4,6 @@ This project is a web application that allows users to join other groups and ass
 
 ## Example Pages <br>
 
-![Alt text](/Example-Pages/HomePage.png)
 ![Alt text](/Example-Pages/GroupHomePage.png)
 ![Alt text](/Example-Pages/LoginPage.png)
 
